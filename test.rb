@@ -14,7 +14,14 @@ puts "testando pessoas"
 
 
 puts "testando enderecos"
-a = CdtBaas::CdtAddress.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtAddress.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 # zip = a.checkZip({:CEP => "01410000"})
 # a.getAddresses({:idPessoa => 300})
 # a.findAddress(287)
+
+
+puts "testando Contas"
+a = CdtBaas::CdtAccount.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+a.getAccounts(50)
+a.getTimeline({:id => 30, :page => 0, :limit => 50})
+a.getTransactions({:id => 30, :page => 0, :limit => 5, :idTipoTransacao => 3})

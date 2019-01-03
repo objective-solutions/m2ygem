@@ -23,5 +23,14 @@ module CdtBaas
   INVOICES_PATH = "boletos/"
   INVOICE_REGISTER_PATH = "registrar/"
   INVOICE_PRINT_PATH = "arquivo.pdf"
-  
+  ACCOUNT_PATH = "contas/"
+  TIMELINE_PATH = "timeline/"
+  TRANSACTIONS_PATH = "transacoes/"
+  ACTIVE_PATH = "reativar/"
+  BLOCKED_PATH = "bloquear/"
+  CANCEL_PATH = "Cancelar/"
+  CARD_PATH = "gerar-cartao-grafica/"
+  VIRTUAL_CARD_PATH = "gerar-cartao-virtual/"
+  BANK_SLIP_PATH = "gerar-boleto-recarga "
+
 end
