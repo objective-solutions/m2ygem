@@ -1,0 +1,38 @@
+require 'json'
+
+module CdtBaas
+	class CdtHelper
+		
+		def self.homologation?(env)
+			env == HOMOLOGATION
+		end
+
+		def self.saveToken(token)
+			if !token.nil?
+				ENV["CDT_TOKEN"] = token.to_s
+				ENV["CDT_TOKEN_EXPIRY"] = (Time.now + 3600).to_s
+			end
+		end
+
+		def self.shouldRefreshToken?
+			finish_date = ENV["CDT_TOKEN_EXPIRY"]
+			finish_date.nil? || finish_date.to_time < Time.now
+		end
+
+
+		def self.conductorBodyToString(json)
+			string = "?"
+			arr = []
+			json.keys.each do |key|
+				arr << key.to_s + "=" + json[key].to_s
+			end
+			string + arr.join("&")
+		end
+
+
+
+
+	end
+end
+
+

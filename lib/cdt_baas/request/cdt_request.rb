@@ -1,0 +1,59 @@
+require "httparty"
+
+module CdtBaas
+
+	class CdtRequest
+
+      def initialize(user = nil, password = nil)
+
+      	if !user.nil? && !password.nil?
+	        auth = "Basic " + Base64::strict_encode64(user + ":" + password)
+        else
+      		auth = ENV["CDT_TOKEN"]
+        end
+	    @headers = { 
+	        	"Content-Type" => 'application/x-www-form-urlencoded',
+	        	"Authorization" => auth
+	         	}
+      end
+
+      def post(url, body)
+		req = HTTParty.post(url, 
+			  body: body.to_json, 
+		      headers: @headers
+		    )
+
+		puts url
+		puts req.parsed_response
+		req.parsed_response
+	   end
+
+      def get(url)
+		req = HTTParty.get(url, 
+		      headers: @headers
+		    )
+		puts url
+		puts req.parsed_response
+		req.parsed_response
+	   end
+
+      def put(url)
+		req = HTTParty.put(url, 
+		      headers: @headers
+		    )
+		puts url
+		puts req.parsed_response
+		req.parsed_response
+	   end
+
+      def delete(url)
+		req = HTTParty.delete(url, 
+		      headers: @headers
+		    )
+		req.parsed_response
+	   end
+
+
+	end
+
+end
