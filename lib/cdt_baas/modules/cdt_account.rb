@@ -25,7 +25,7 @@ module CdtBaas
 		end
 
 		def activeAccount(body)
-			response = @request.post(@url + ACCOUNT_PATH + body[:id].to_s + '/' + ACTIVE_PATH + CdtHelper.conductorBodyToString(body), {})
+			response = @request.post(@url + ACCOUNT_PATH + body[:id].to_s + '/' + ACTIVE_PATH, {})
 			person = CdtModel.new(response)
 			person
 		end

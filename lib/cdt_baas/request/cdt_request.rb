@@ -17,7 +17,12 @@ module CdtBaas
 	         	}
       end
 
-      def post(url, body)
+      def post(url, body, use_json = false)
+
+      	if use_json
+      		@headers["Content-Type"] = 'application/json'
+      	end
+
 		req = HTTParty.post(url, 
 			  body: body.to_json, 
 		      headers: @headers
