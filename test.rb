@@ -50,10 +50,10 @@ puts "testando Cartões"
 #a.findCard(30)
 #a.findCardData(30)
 #a.getCardLimit(30)
-#a.createDebitCard(0, {}) # ERROR
-#a.cancelCard(-1, {}) # ERROR
-#a.addHolder(-1, {}) # ERROR
-#a.updatePassword(-1, {}) # ERROR
+#a.createDebitCard(0, {})
+#a.cancelCard(-1, {})
+#a.addHolder(-1, {})
+#a.updatePassword(-1, {})
 
 puts "testando Clientes"
 #a = CdtBaas::CdtClient.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -76,23 +76,23 @@ puts "testando Transport Cards"
 #a = CdtBaas::CdtTransportCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.transportCards({}) # Parse Erro
 #a.getTransportCards({}) # Parse Erro
-#a.newRecharge({}) # Erro
+#a.newRecharge({})
 
 puts "testando Recargas"
-#a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
-#a.rechargeReport() # Erro 500 na API
+a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a.rechargeReport() # Parse Erro
 #a.newRechargeSolicitation({})
-#a.getRechargeSolicitation()  # Erro 500 na API
+#a.getRechargeSolicitation() # Parse Erro
 #a.newRechargeOrder({})
 #a.confirmDealers()
 #a.confirmRecharge(1, {})
-#a.consultRecharge() # Precisa e params ou não?
+#a.consultRecharge()
 #a.adjustmentRecharge({})
 
 puts "testando Usuários"
-a = CdtBaas::CdtUser.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtUser.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.getUsers() # undefined method `each_pair' for #<String:0x00007fdb762296e8> (NoMethodError)
 #a.saveUser({})
-#a.updateUser({}) # Error
-a.findUser(101) # undefined method `each_pair' for #<String:0x00007fdb762296e8> (NoMethodError)
-#a.assignProfile(1, {}) # Error
+#a.updateUser({})
+#a.findUser(101) # undefined method `each_pair' for #<String:0x00007fdb762296e8> (NoMethodError)
+#a.assignProfile(1, {})
