@@ -33,24 +33,66 @@ puts "testando Serviço"
 #a.p2pTransfer({})
 
 
-puts "testando Payment" # Erro parser no retorno
+puts "testando Payment"
 #a = CdtBaas::CdtPayment.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.paymentAdjustment({})
 
 
-puts "testando Boleto" # Erro parser no retorno
+puts "testando Boleto"
 #a = CdtBaas::CdtBankSlip.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.getBankSlip({})
 #a.findBankSlip({:id => 2})
 #a.register(-1)
 	
 
-puts "testando Cartões" # Erro parser no retorno
-a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+puts "testando Cartões"
+#a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.findCard(30)
 #a.findCardData(30)
 #a.getCardLimit(30)
-a.createDebitCard(0, {}) # ERROR
+#a.createDebitCard(0, {}) # ERROR
 #a.cancelCard(-1, {}) # ERROR
 #a.addHolder(-1, {}) # ERROR
 #a.updatePassword(-1, {}) # ERROR
+
+puts "testando Clientes"
+#a = CdtBaas::CdtClient.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a.registerPJAccount({})
+
+puts "testando Clientes"
+#a = CdtBaas::CdtClient.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a.registerPJAccount({})
+
+puts "testando Documentos"
+#a = CdtBaas::CdtDocument.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a.registerDocument({})
+
+puts "testando Tranferência bancaria"
+#a = CdtBaas::CdtTransfer.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a.bankTransfers({}) # Parser Error
+#a.bankTransfersAdjustment({})
+
+puts "testando Transport Cards"
+#a = CdtBaas::CdtTransportCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a.transportCards({}) # Parse Erro
+#a.getTransportCards({}) # Parse Erro
+#a.newRecharge({}) # Erro
+
+puts "testando Recargas"
+#a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a.rechargeReport() # Erro 500 na API
+#a.newRechargeSolicitation({})
+#a.getRechargeSolicitation()  # Erro 500 na API
+#a.newRechargeOrder({})
+#a.confirmDealers()
+#a.confirmRecharge(1, {})
+#a.consultRecharge() # Precisa e params ou não?
+#a.adjustmentRecharge({})
+
+puts "testando Usuários"
+a = CdtBaas::CdtUser.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a.getUsers() # undefined method `each_pair' for #<String:0x00007fdb762296e8> (NoMethodError)
+#a.saveUser({})
+#a.updateUser({}) # Error
+a.findUser(101) # undefined method `each_pair' for #<String:0x00007fdb762296e8> (NoMethodError)
+#a.assignProfile(1, {}) # Error
