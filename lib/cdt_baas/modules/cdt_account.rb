@@ -43,7 +43,7 @@ module CdtBaas
 		end
 
 		def createBankSlip(body)
-			response = @request.post(@url + BOLETO_PATH + body[:id].to_s + '/' + BANK_SLIP_PATH + CdtHelper.conductorBodyToString(body), {})
+			response = @request.post(@url + ACCOUNT_PATH + body[:id].to_s + '/' + BANK_SLIP_PATH + CdtHelper.conductorBodyToString(body), {})
 			person = CdtModel.new(response)
 			person
 		end
