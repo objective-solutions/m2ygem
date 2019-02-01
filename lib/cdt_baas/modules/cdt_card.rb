@@ -42,7 +42,7 @@ module CdtBaas
 	         person
 	     end
 
-	     def blockCard(id)
+	     def blockCard(id, body)
 	         response = @request.post(@url + CARD + id.to_s + '/' + BLOCKED_PATH + CdtHelper.conductorBodyToString(body), {})
 	         person = CdtModel.new(response)
 	         person
