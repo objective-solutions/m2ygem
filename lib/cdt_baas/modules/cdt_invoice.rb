@@ -6,17 +6,16 @@ module CdtBaas
 	        startModule(user, password, env)
 	     end
 
-
 	 	 def getInvoices(body)
 	         response = @request.get(@url + INVOICES_PATH + CdtHelper.conductorBodyToString(body))
 	         person = CdtModel.new(response)
 	         person
 	     end
 
-	 	 def createInvoice(body)
-	         response = @request.post(@url + INVOICES_PATH + CdtHelper.conductorBodyToString(body), {})
-	         person = CdtModel.new(response)
-	         person
+		  def createInvoice(body)
+			response = @request.post(@url + INVOICES_PATH, body, true)
+			invoice = CdtModel.new(response)
+			generateResponse(invoice)
 	     end
 
 	     def findInvoice(id)

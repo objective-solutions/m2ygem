@@ -27,7 +27,8 @@ puts "testando Contas"
 #a.getTransactions({:id => 30, :page => 0, :limit => 5, :idTipoTransacao => 3})
 #a.activeAccount({:id => 50})
 
-
+a = CdtBaas::CdtInvoice.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+a.createInvoice({})
 puts "testando Serviço"
 #a = CdtBaas::CdtService.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.p2pTransfer({})
@@ -79,7 +80,7 @@ puts "testando Transport Cards"
 #a.newRecharge({})
 
 puts "testando Recargas"
-a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+# a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.rechargeReport() # Parse Erro
 #a.newRechargeSolicitation({})
 #a.getRechargeSolicitation() # Parse Erro
