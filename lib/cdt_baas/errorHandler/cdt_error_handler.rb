@@ -9,6 +9,8 @@ end
 
 module CdtBaas
     class CdtErrorHandler
+        attr_accessor :errorType, :message, :reasons, :status
+
         def initialize()
             @errorType = nil
             @message = ""
@@ -27,15 +29,15 @@ module CdtBaas
                 when CdtMappedErrors::InputError
                     @errorType = ErrorEnum::InputError
                     @status = 422
-                    inputErrorHandler(cdtResponse)
                 else
                     @errorType = ErrorEnum::UnknownError
                 end
+                generateReasons(cdtResponse)
             end
             hasError
         end
 
-        def inputErrorHandler(cdtResponse)
+        def generateReasons(cdtResponse)
             @reasons = []
             if !cdtResponse[:erros].nil?
                 cdtResponse[:erros].each do |error|
@@ -48,6 +50,8 @@ module CdtBaas
                     end
                     @reasons << reasonMessage
                 end
+            elsif !cdtResponse[:message].nil?
+                reasons << cdtResponse[:message]
             end
         end
     end
