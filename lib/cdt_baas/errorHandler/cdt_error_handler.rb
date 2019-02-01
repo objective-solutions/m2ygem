@@ -1,10 +1,14 @@
 module ErrorEnum
     UnknownError = 0
     InputError = 1
+    NotFound = 2
+    BadRequest = 3
 end
 
 module CdtMappedErrors
     InputError = "MethodArgumentNotValidException"
+    NotFoundPIER = "NotFoundExceptionPIER"
+    BadRequestPIER = "BadRequestExceptionPIER"
 end
 
 module CdtBaas
@@ -41,6 +45,12 @@ module CdtBaas
                 when CdtMappedErrors::InputError
                     @errorType = ErrorEnum::InputError
                     @status = 422
+                when CdtMappedErrors::NotFoundPIER
+                    @errorType = ErrorEnum::NotFound
+                    @status = 404
+                when CdtMappedErrors::BadRequestPIER
+                    @errorType = ErrorEnum::BadRequest
+                    @status = 400
                 else
                     @errorType = ErrorEnum::UnknownError
                 end

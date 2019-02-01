@@ -8,8 +8,8 @@ module CdtBaas
 
 	 	 def getInvoices(body)
 	         response = @request.get(@url + INVOICES_PATH + CdtHelper.conductorBodyToString(body))
-	         person = CdtModel.new(response)
-	         person
+			 invoice = CdtModel.new(response)
+			 generateResponse(invoice)
 	     end
 
 		  def createInvoice(body)
@@ -20,21 +20,21 @@ module CdtBaas
 
 	     def findInvoice(id)
 	         response = @request.get(@url + INVOICES_PATH + id.to_s)
-	         person = CdtModel.new(response)
-	         person
+	         invoice = CdtModel.new(response)
+	         generateResponse(invoice)
 	     end
 
 
 	     def registerInvoice(id)
 	         response = @request.post(@url + INVOICES_PATH + id.to_s + "/" + INVOICE_REGISTER_PATH, {})
-	         person = CdtModel.new(response)
-	         person
+	         invoice = CdtModel.new(response)
+	         generateResponse(invoice)
 	     end
 
 	     def printInvoice(id)
 	         response = @request.get(@url + INVOICES_PATH + id.to_s + "/" + INVOICE_PRINT_PATH)
-	         person = CdtModel.new(response)
-	         person
+	         invoice = CdtModel.new(response)
+	         generateResponse(invoice)
 	     end
 
 
