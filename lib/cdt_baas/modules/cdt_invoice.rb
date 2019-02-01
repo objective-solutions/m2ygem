@@ -15,13 +15,8 @@ module CdtBaas
 
 		  def createInvoice(body)
 			response = @request.post(@url + INVOICES_PATH, body, true)
-	        person = CdtModel.new(response)
-			cdtErrorHandler = CdtErrorHandler.new
-			if cdtErrorHandler.mapErrorType(person)
-				cdtErrorHandler
-			else 
-				person
-			end
+			invoice = CdtModel.new(response)
+			generateResponse(invoice)
 	     end
 
 	     def findInvoice(id)
