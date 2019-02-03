@@ -34,11 +34,11 @@ puts "testando Serviço"
 
 
 puts "testando Payment"
-a = CdtBaas::CdtPayment.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
-puts ''
-puts ''
-res = a.paymentAdjustment("123")
-puts res
+# a = CdtBaas::CdtPayment.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+# puts ''
+# puts ''
+# res = a.paymentAdjustment("123")
+# puts res
 
 
 puts "testando Boleto"
