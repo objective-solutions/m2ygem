@@ -33,6 +33,7 @@ module CdtBaas
   VIRTUAL_CARD_PATH = "gerar-cartao-virtual/"
   BANK_SLIP_PATH = "gerar-boleto-recarga/"
   P2P_PATH = "p2ptransfer/"
+  V1_PAYMENT = "v1/payments"
   PAYMENT = "payments/"
   PAYMENT_VALIDATE = "payments/validate/"
   PAYMENT_ADJUSTMENT = "payments/adjustment/"

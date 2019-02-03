@@ -7,21 +7,23 @@ module CdtBaas
 		end
 
 		def payment(body)
-			response = @request.post(@url + PAYMENT + CdtHelper.conductorBodyToString(body), {}, true)
-			person = CdtModel.new(response)
-			person
+			response = @request.post(@url + V1_PAYMENT, body, true)
+			puts response
+			payment = CdtModel.new(response)
+			generateResponse(payment)
 		end
 
-		def paymentValidate(body)
-			response = @request.get(@url + PAYMENT_VALIDATE + CdtHelper.conductorBodyToString(body))
-			person = CdtModel.new(response)
-			person
+		def paymentValidate(barCode)
+			response = @request.get(@url + PAYMENT_VALIDATE + barCode)
+			payment = CdtModel.new(response)
+			puts payment
+			generateResponse(payment)
 		end
 
-		def paymentAdjustment(body)
-			response = @request.get(@url + PAYMENT_ADJUSTMENT + CdtHelper.conductorBodyToString(body))
-			person = CdtModel.new(response)
-			person
+		def paymentAdjustment(idAdjustment)
+			response = @request.get(@url + PAYMENT_ADJUSTMENT + idAdjustment)
+			payment = CdtModel.new(response)
+			generateResponse(payment)
 		end
 
 	end

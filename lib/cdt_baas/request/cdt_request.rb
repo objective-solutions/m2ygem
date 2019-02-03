@@ -36,7 +36,7 @@ module CdtBaas
       def get(url)
 		req = HTTParty.get(url, 
 		      headers: @headers
-		    )
+			 )
 		puts url
 		puts req.parsed_response
 		req.parsed_response

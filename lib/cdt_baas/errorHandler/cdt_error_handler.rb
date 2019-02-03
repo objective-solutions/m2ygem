@@ -60,6 +60,9 @@ module CdtBaas
                     @cdtStatus = cdtResponse[:status]
                 end
                 generateReasons(cdtResponse)
+            elsif !cdtResponse[:message].nil?
+                hasError = true
+                @message = cdtResponse[:message]
             end
             hasError
         end
