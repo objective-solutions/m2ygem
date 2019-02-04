@@ -12,21 +12,21 @@ module CdtBaas
 		end
 
 		def createPhone(body)
-			response = @request.put(@url + PHONES_PATH + CdtHelper.conductorBodyToString(body), {})
+			response = @request.post(@url + PHONES_PATH + CdtHelper.conductorBodyToString(body), {})
 			phonesResponse = CdtModel.new(response)
 			generateResponse(phonesResponse)
 		end
 
 		def findPhone(id)
 			response = @request.get(@url + PHONES_PATH + id.to_s)
-			person = CdtModel.new(response)
-			person
+			phonesResponse = CdtModel.new(response)
+			generateResponse(phonesResponse)
 		end
 
-		def updatePhone(id, body)
-			response = @request.get(@url + PHONES_PATH + id.to_s + "/" + CdtHelper.conductorBodyToString(body))
-			person = CdtModel.new(response)
-			person
+		def updatePhone(body)
+			response = @request.put(@url + PHONES_PATH + CdtHelper.conductorBodyToString(body), {})
+			phonesResponse = CdtModel.new(response)
+			generateResponse(phonesResponse)
 		end
 
  	end
