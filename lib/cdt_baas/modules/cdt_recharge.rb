@@ -6,25 +6,22 @@ module CdtBaas
 			startModule(user, password, env)
 		end
 
-		def rechargeReport()
-			response = @request.get(@url + RECHARGES)
-			person = CdtModel.new(response)
-			person
+		def rechargeReport(id)
+			response = @request.get(@url + RECHARGES + id.to_s)
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
 		def newRechargeSolicitation(id, body)
 			response = @request.post(@url + RECHARGES + id.to_s, body, true)
-			puts "Response from post"
-			puts response
 			rechargeResponse = CdtModel.new(response)
-			puts rechargeResponse
 			generateResponse(rechargeResponse)
 		end
 
 		def getRechargeSolicitation()
 			response = @request.get(@url + RECHARGES)
-			person = CdtModel.new(response)
-			person
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
 		def newRechargeOrder(body)
@@ -45,10 +42,10 @@ module CdtBaas
 			generateResponse(rechargeResponse)
 		end
 
-		def consultRecharge()
-			response = @request.get(@url + RECHARGES + CONSULT)
-			person = CdtModel.new(response)
-			person
+		def consultRecharge(id)
+			response = @request.get(@url + RECHARGES + CONSULT + id.to_s)
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
 		def adjustmentRecharge(body)
