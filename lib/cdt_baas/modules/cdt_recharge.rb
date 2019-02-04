@@ -34,9 +34,9 @@ module CdtBaas
 		end
 
 		def confirmRecharge(id, body)
-			response = @request.post(@url + RECHARGES + id.to_s + '/' + CONFIRM + CdtHelper.conductorBodyToString(body), {}, true)
-			person = CdtModel.new(response)
-			person
+			response = @request.post(@url + RECHARGES + id.to_s + '/' + CONFIRM, body, true)
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
 		def confirmDealers()
