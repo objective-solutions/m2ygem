@@ -27,7 +27,6 @@ module CdtBaas
 				body: body.to_json, 
 					headers: @headers
 				)
-
 			puts url
 			puts req.parsed_response
 			req.parsed_response

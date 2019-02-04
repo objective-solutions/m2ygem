@@ -12,10 +12,13 @@ module CdtBaas
 			person
 		end
 
-		def newRechargeSolicitation(body)
-			response = @request.post(@url + RECHARGES + CdtHelper.conductorBodyToString(body), {}, true)
-			person = CdtModel.new(response)
-			person
+		def newRechargeSolicitation(id, body)
+			response = @request.post(@url + RECHARGES + id.to_s, body, true)
+			puts "Response from post"
+			puts response
+			rechargeResponse = CdtModel.new(response)
+			puts rechargeResponse
+			generateResponse(rechargeResponse)
 		end
 
 		def getRechargeSolicitation()
@@ -25,9 +28,9 @@ module CdtBaas
 		end
 
 		def newRechargeOrder(body)
-			response = @request.post(@url + RECHARGES + CdtHelper.conductorBodyToString(body), {}, true)
-			person = CdtModel.new(response)
-			person
+			response = @request.post(@url + RECHARGES, body, true)
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
 		def confirmRecharge(id, body)
@@ -38,8 +41,8 @@ module CdtBaas
 
 		def confirmDealers()
 			response = @request.get(@url + RECHARGES + DEALERS)
-			person = CdtModel.new(response)
-			person
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
 		def consultRecharge()
