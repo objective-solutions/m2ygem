@@ -19,20 +19,7 @@ module CdtBaas
       end
 
       def generateResponse(input)
-        cdtErrorHandler = CdtErrorHandler.new
-        response = {}
-        if cdtErrorHandler.mapErrorType(input)
-          response = {
-            success: false,
-            error: cdtErrorHandler
-          }
-        else
-          response = {
-            success: true,
-            content: input
-          }
-        end
-        response
+        CdtHelper.generate_general_response(input)
       end
 end
 

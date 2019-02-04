@@ -11,6 +11,7 @@ module CdtBaas
       	response = @request.post(@url + TOKEN_PATH, {})
         token = CdtModel.new(response)
         CdtHelper.saveToken(token.access_token)
+        CdtHelper.generate_general_response(token)
 	   end
 
 	end
