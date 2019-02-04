@@ -24,7 +24,9 @@ module CdtBaas
 			string = "?"
 			arr = []
 			json.keys.each do |key|
-				arr << key.to_s + "=" + json[key].to_s
+				if !json[key].nil?
+					arr << key.to_s + "=" + json[key].to_s
+				end
 			end
 			string + arr.join("&")
 		end
