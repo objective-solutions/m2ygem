@@ -41,7 +41,7 @@ module CdtBaas
       req.parsed_response
     end
 
-    def put(url, body, use_json = false)
+    def put(url, body = {}, use_json = false)
       if use_json
         @headers["Content-Type"] = 'application/json'
       end

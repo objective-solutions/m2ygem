@@ -38,6 +38,7 @@ module CdtBaas
             @message = ""
             @errorType = nil
             hasError = false
+
             if !cdtResponse[:exception].nil?
                 hasError = true
                 @message = cdtResponse[:exception]
@@ -63,6 +64,11 @@ module CdtBaas
             elsif !cdtResponse[:message].nil? and !cdtResponse[:message].downcase.include? "success"
                 hasError = true
                 @message = cdtResponse[:message]
+            elsif !cdtResponse[:error].nil?
+                hasError = true
+                @message = cdtResponse[:message]
+                generateReasons(cdtResponse)
+                @errorType = ErrorEnum::UnknownError
             end
             hasError
         end
@@ -84,6 +90,10 @@ module CdtBaas
                 end
             elsif !cdtResponse[:message].nil?
                 @reasons << cdtResponse[:message]
+            elsif !cdtResponse[:error].nil?
+                puts 'cdtREP'
+                puts cdtResponse[:error]
+                @reasons << cdtResponse[:error]
             end
         end
     end

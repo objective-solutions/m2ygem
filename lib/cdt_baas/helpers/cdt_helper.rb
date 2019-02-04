@@ -45,6 +45,8 @@ module CdtBaas
 						content: input
 				}
 			end
+			puts 'generateResponse'
+			puts response
 			response
 		end
 	end

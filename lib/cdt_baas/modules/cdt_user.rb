@@ -13,10 +13,10 @@ module CdtBaas
 	     end
 
 	 	 def saveUser(body)
-	         response = @request.post(@url + USER, {}, true)
-	         person = CdtModel.new(response)
-	         person
-	     end
+			 response = @request.post(@url + USER, body, true)
+			 userResponse = CdtModel.new(response)
+			 generateResponse(userResponse)
+		 end
 
 	 	 def updateUser(body)
 	         response = @request.put(@url + USER + CdtHelper.conductorBodyToString(body))
