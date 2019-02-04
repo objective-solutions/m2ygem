@@ -48,10 +48,10 @@ module CdtBaas
 			generateResponse(rechargeResponse)
 		end
 
-		def adjustmentRecharge(body)
-			response = @request.get(@url + RECHARGES + ADJUSTMENT + CdtHelper.conductorBodyToString(body))
-			person = CdtModel.new(response)
-			person
+		def adjustmentRecharge(id)
+			response = @request.get(@url + RECHARGES + ADJUSTMENT + id)
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
 	end
