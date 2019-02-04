@@ -12,9 +12,9 @@ module CdtBaas
 		end
 
 		def createPhone(body)
-			response = @request.post(@url + PHONES_PATH + CdtHelper.conductorBodyToString(body), {})
-			person = CdtModel.new(response)
-			person
+			response = @request.put(@url + PHONES_PATH + CdtHelper.conductorBodyToString(body), {})
+			phonesResponse = CdtModel.new(response)
+			generateResponse(phonesResponse)
 		end
 
 		def findPhone(id)
