@@ -42,16 +42,16 @@ module CdtBaas
       generateResponse(userResponse)
     end
 
-    def assignProfile(id, body)
-      response = @request.post(@url + USER + id.to_s + '/' + ASSIGN_PROFILE + CdtHelper.conductorBodyToString(body), {}, true)
-      person = CdtModel.new(response)
-      person
+    def assignProfile(userId, profileId)
+      response = @request.post(@url + USER + userId.to_s + '/' + ASSIGN_PROFILE + profileId.to_s, {}, true)
+      userResponse = CdtModel.new(response)
+      generateResponse(userResponse)
     end
 
-    def unassignProfile(id, body)
-      response = @request.post(@url + USER + id.to_s + '/' + UNASSIGN_PROFILE + CdtHelper.conductorBodyToString(body), {}, true)
-      person = CdtModel.new(response)
-      person
+    def unassignProfile(userId, profileId)
+      response = @request.post(@url + USER + userId.to_s + '/' + UNASSIGN_PROFILE + profileId.to_s, {}, true)
+      userResponse = CdtModel.new(response)
+      generateResponse(userResponse)
     end
 
   end
