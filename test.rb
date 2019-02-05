@@ -19,8 +19,8 @@ puts "testando enderecos"
 
 
 puts "testando Contas"
-a = CdtBaas::CdtAccount.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
-a.getAccounts({:idPessoa => 72})
+#a = CdtBaas::CdtAccount.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a.getUserAccounts({:idPessoa => 72})
 #a.getTimeline({:id => 30, :page => 0, :limit => 50})
 #a.getTransactions({:id => 30, :page => 0, :limit => 5, :idTipoTransacao => 3})
 #a.activeAccount({:id => 50})
@@ -49,7 +49,7 @@ puts "testando Boleto"
 	
 
 puts "testando Cartões"
-#a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.findCard(30)
 #a.findCardData(30)
 #a.getCardLimit(30)
@@ -57,6 +57,7 @@ puts "testando Cartões"
 #a.cancelCard(-1, {})
 #a.addHolder(-1, {})
 #a.updatePassword(-1, {})
+a.getCards({:idConta => 2})
 
 puts "testando Clientes"
 #a = CdtBaas::CdtClient.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
