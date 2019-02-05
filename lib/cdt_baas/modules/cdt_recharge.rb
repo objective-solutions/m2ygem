@@ -6,52 +6,52 @@ module CdtBaas
 			startModule(user, password, env)
 		end
 
-		def rechargeReport()
-			response = @request.get(@url + RECHARGES)
-			person = CdtModel.new(response)
-			person
+		def rechargeReport(id)
+			response = @request.get(@url + RECHARGES + id.to_s)
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
-		def newRechargeSolicitation(body)
-			response = @request.post(@url + RECHARGES + CdtHelper.conductorBodyToString(body), {}, true)
-			person = CdtModel.new(response)
-			person
+		def newRechargeSolicitation(id, body)
+			response = @request.post(@url + RECHARGES + id.to_s, body, true)
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
 		def getRechargeSolicitation()
 			response = @request.get(@url + RECHARGES)
-			person = CdtModel.new(response)
-			person
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
 		def newRechargeOrder(body)
-			response = @request.post(@url + RECHARGES + CdtHelper.conductorBodyToString(body), {}, true)
-			person = CdtModel.new(response)
-			person
+			response = @request.post(@url + RECHARGES, body, true)
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
 		def confirmRecharge(id, body)
-			response = @request.post(@url + RECHARGES + id.to_s + '/' + CONFIRM + CdtHelper.conductorBodyToString(body), {}, true)
-			person = CdtModel.new(response)
-			person
+			response = @request.post(@url + RECHARGES + id.to_s + '/' + CONFIRM, body, true)
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
 		def confirmDealers()
 			response = @request.get(@url + RECHARGES + DEALERS)
-			person = CdtModel.new(response)
-			person
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
-		def consultRecharge()
-			response = @request.get(@url + RECHARGES + CONSULT)
-			person = CdtModel.new(response)
-			person
+		def consultRecharge(id)
+			response = @request.get(@url + RECHARGES + CONSULT + id.to_s)
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
-		def adjustmentRecharge(body)
-			response = @request.get(@url + RECHARGES + ADJUSTMENT + CdtHelper.conductorBodyToString(body))
-			person = CdtModel.new(response)
-			person
+		def adjustmentRecharge(id)
+			response = @request.get(@url + RECHARGES + ADJUSTMENT + id)
+			rechargeResponse = CdtModel.new(response)
+			generateResponse(rechargeResponse)
 		end
 
 	end

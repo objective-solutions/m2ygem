@@ -1,10 +1,14 @@
 module ErrorEnum
     UnknownError = 0
     InputError = 1
+    NotFound = 2
+    BadRequest = 3
 end
 
 module CdtMappedErrors
     InputError = "MethodArgumentNotValidException"
+    NotFoundPIER = "NotFoundExceptionPIER"
+    BadRequestPIER = "BadRequestExceptionPIER"
 end
 
 module CdtBaas
@@ -34,6 +38,7 @@ module CdtBaas
             @message = ""
             @errorType = nil
             hasError = false
+
             if !cdtResponse[:exception].nil?
                 hasError = true
                 @message = cdtResponse[:exception]
@@ -41,6 +46,12 @@ module CdtBaas
                 when CdtMappedErrors::InputError
                     @errorType = ErrorEnum::InputError
                     @status = 422
+                when CdtMappedErrors::NotFoundPIER
+                    @errorType = ErrorEnum::NotFound
+                    @status = 404
+                when CdtMappedErrors::BadRequestPIER
+                    @errorType = ErrorEnum::BadRequest
+                    @status = 400
                 else
                     @errorType = ErrorEnum::UnknownError
                 end
@@ -50,6 +61,14 @@ module CdtBaas
                     @cdtStatus = cdtResponse[:status]
                 end
                 generateReasons(cdtResponse)
+            elsif !cdtResponse[:message].nil? and !cdtResponse[:message].downcase.include? "success"
+                hasError = true
+                @message = cdtResponse[:message]
+            elsif !cdtResponse[:error].nil?
+                hasError = true
+                @message = cdtResponse[:message]
+                generateReasons(cdtResponse)
+                @errorType = ErrorEnum::UnknownError
             end
             hasError
         end
@@ -71,6 +90,10 @@ module CdtBaas
                 end
             elsif !cdtResponse[:message].nil?
                 @reasons << cdtResponse[:message]
+            elsif !cdtResponse[:error].nil?
+                puts 'cdtREP'
+                puts cdtResponse[:error]
+                @reasons << cdtResponse[:error]
             end
         end
     end

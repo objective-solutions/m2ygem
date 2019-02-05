@@ -24,14 +24,31 @@ module CdtBaas
 			string = "?"
 			arr = []
 			json.keys.each do |key|
-				arr << key.to_s + "=" + json[key].to_s
+				if !json[key].nil?
+					arr << key.to_s + "=" + json[key].to_s
+				end
 			end
 			string + arr.join("&")
 		end
 
-
-
-
+		def self.generate_general_response(input)
+			cdtErrorHandler = CdtErrorHandler.new
+			response = {}
+			if cdtErrorHandler.mapErrorType(input)
+				response = {
+						success: false,
+						error: cdtErrorHandler
+				}
+			else
+				response = {
+						success: true,
+						content: input
+				}
+			end
+			puts 'generateResponse'
+			puts response
+			response
+		end
 	end
 end
 

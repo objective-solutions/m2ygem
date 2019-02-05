@@ -7,9 +7,9 @@ module CdtBaas
 		end
 
 		def p2pTransfer(body)
-			response = @request.post(@url + P2P_PATH + CdtHelper.conductorBodyToString(body), {}, true)
-			person = CdtModel.new(response)
-			person
+			response = @request.post(@url + P2P_PATH, body, true)
+			p2pResponse = CdtModel.new(response)
+			generateResponse(p2pResponse)
 		end
 
 	end
