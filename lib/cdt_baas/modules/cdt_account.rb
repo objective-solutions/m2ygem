@@ -12,6 +12,12 @@ module CdtBaas
 			person
 		end
 
+		def getUserAccounts(body)
+			response = @request.get(@url + ACCOUNT_PATH + CdtHelper.conductorBodyToString(body))
+			person = CdtModel.new(response)
+			person
+		end
+
 		def getTimeline(body)
 			response = @request.get(@url + ACCOUNT_PATH + body[:id].to_s + '/' + TIMELINE_PATH + CdtHelper.conductorBodyToString(body))
 			person = CdtModel.new(response)
