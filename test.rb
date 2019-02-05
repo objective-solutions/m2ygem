@@ -1,14 +1,12 @@
 require "cdt_baas"
-# a = CdtBaas::CdtPerson.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
-
 
 
 puts "testando pessoas"
-
+#a = CdtBaas::CdtPerson.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 # person = a.createPerson({:nome => "Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 # person = a.updatePerson(3113,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
+#p people = a.getPeople({:cpf => "11111111111"})
 
-# people = a.getPeople
 # token = a.findPersonDetails(100)
 # person = a.updatePersonDetails(3000,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 
@@ -27,8 +25,8 @@ puts "testando Contas"
 #a.getTransactions({:id => 30, :page => 0, :limit => 5, :idTipoTransacao => 3})
 #a.activeAccount({:id => 50})
 
-a = CdtBaas::CdtInvoice.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
-a.createInvoice({})
+#a = CdtBaas::CdtInvoice.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a.createInvoice({})
 puts "testando Serviço"
 #a = CdtBaas::CdtService.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.p2pTransfer({})
@@ -80,7 +78,7 @@ puts "testando Transport Cards"
 #a.newRecharge({})
 
 puts "testando Recargas"
-# a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.rechargeReport() # Parse Erro
 #a.newRechargeSolicitation({})
 #a.getRechargeSolicitation() # Parse Erro

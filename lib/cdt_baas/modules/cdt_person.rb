@@ -8,8 +8,8 @@ module CdtBaas
         startModule(user, password, env)
      end
 
-     def getPeople
-         response = @request.get(@url + PEOPLE_PATH)
+     def getPeople(body)
+         response = @request.get(@url + PEOPLE_PATH + CdtHelper.conductorBodyToString(body))
          person = CdtModel.new(response)
          person
      end
