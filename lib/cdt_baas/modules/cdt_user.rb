@@ -18,10 +18,10 @@ module CdtBaas
       generateResponse(userResponse)
     end
 
-    def updateUser(body)
-      response = @request.put(@url + USER + CdtHelper.conductorBodyToString(body))
-      person = CdtModel.new(response)
-      person
+    def updateUser(id, body)
+      response = @request.put(@url + USER + id.to_s, body, true)
+      userResponse = CdtModel.new(response)
+      generateResponse(userResponse)
     end
 
     def findUser(id)
