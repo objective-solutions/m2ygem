@@ -8,8 +8,8 @@ module CdtBaas
 
     def getUsers()
       response = @request.get(@url + USER)
-      person = CdtModel.new(response)
-      person
+      userResponse = CdtModel.new(response)
+      generateResponse(userResponse)
     end
 
     def saveUser(body)
@@ -31,15 +31,15 @@ module CdtBaas
     end
 
     def signin(body)
-      response = @request.post(@url + USER + LOGIN + CdtHelper.conductorBodyToString(body), {}, true)
-      person = CdtModel.new(response)
-      person
+      response = @request.post(@url + USER + LOGIN, body, true)
+      userResponse = CdtModel.new(response)
+      generateResponse(userResponse)
     end
 
-    def deleteUser(body)
-      response = @request.delete(@url + USER + CdtHelper.conductorBodyToString(body))
-      person = CdtModel.new(response)
-      person
+    def deleteUser(id)
+      response = @request.delete(@url + USER + id.to_s)
+      userResponse = CdtModel.new(response)
+      generateResponse(userResponse)
     end
 
     def assignProfile(id, body)
