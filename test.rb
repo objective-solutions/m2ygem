@@ -57,7 +57,8 @@ a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k
 #a.cancelCard(-1, {})
 #a.addHolder(-1, {})
 #a.updatePassword(-1, {})
-a.getCards({:idConta => 2})
+#a.getCards({:idConta => 2})
+a.findAccountCards({:idConta => 26})
 
 puts "testando Clientes"
 #a = CdtBaas::CdtClient.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")

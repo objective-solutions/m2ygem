@@ -12,6 +12,12 @@ module CdtBaas
 	         person
 	     end
 
+	 	 def findAccountCards(body)
+	         response = @request.get(@url + CARD + CdtHelper.conductorBodyToString(body))
+	         person = CdtModel.new(response)
+	         person
+	     end
+
 	 	 def getCards(body)
 	         response = @request.get(@url + CARD + CdtHelper.conductorBodyToString(body))
 	         person = CdtModel.new(response)
