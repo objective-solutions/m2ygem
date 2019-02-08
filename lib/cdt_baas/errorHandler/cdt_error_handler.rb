@@ -38,37 +38,39 @@ module CdtBaas
             @message = ""
             @errorType = nil
             hasError = false
-
-            if !cdtResponse[:exception].nil?
-                hasError = true
-                @message = cdtResponse[:exception]
-                case cdtResponse[:exception]
-                when CdtMappedErrors::InputError
-                    @errorType = ErrorEnum::InputError
-                    @status = 422
-                when CdtMappedErrors::NotFoundPIER
-                    @errorType = ErrorEnum::NotFound
-                    @status = 404
-                when CdtMappedErrors::BadRequestPIER
-                    @errorType = ErrorEnum::BadRequest
-                    @status = 400
-                else
+            
+            if cdtResponse.class == Hash
+                if !cdtResponse['exception'].nil?
+                    hasError = true
+                    @message = cdtResponse['exception']
+                    case cdtResponse['exception']
+                    when CdtMappedErrors::InputError
+                        @errorType = ErrorEnum::InputError
+                        @status = 422
+                    when CdtMappedErrors::NotFoundPIER
+                        @errorType = ErrorEnum::NotFound
+                        @status = 404
+                    when CdtMappedErrors::BadRequestPIER
+                        @errorType = ErrorEnum::BadRequest
+                        @status = 400
+                    else
+                        @errorType = ErrorEnum::UnknownError
+                    end
+                    if !cdtResponse[:code].nil?
+                        @cdtStatus = cdtResponse[:code]
+                    elsif !cdtResponse[:status].nil?
+                        @cdtStatus = cdtResponse[:status]
+                    end
+                    generateReasons(cdtResponse)
+                elsif !cdtResponse[:message].nil? and !cdtResponse[:message].downcase.include? "success"
+                    hasError = true
+                    @message = cdtResponse[:message]
+                elsif !cdtResponse[:error].nil?
+                    hasError = true
+                    @message = cdtResponse[:message]
+                    generateReasons(cdtResponse)
                     @errorType = ErrorEnum::UnknownError
                 end
-                if !cdtResponse[:code].nil?
-                    @cdtStatus = cdtResponse[:code]
-                elsif !cdtResponse[:status].nil?
-                    @cdtStatus = cdtResponse[:status]
-                end
-                generateReasons(cdtResponse)
-            elsif !cdtResponse[:message].nil? and !cdtResponse[:message].downcase.include? "success"
-                hasError = true
-                @message = cdtResponse[:message]
-            elsif !cdtResponse[:error].nil?
-                hasError = true
-                @message = cdtResponse[:message]
-                generateReasons(cdtResponse)
-                @errorType = ErrorEnum::UnknownError
             end
             hasError
         end

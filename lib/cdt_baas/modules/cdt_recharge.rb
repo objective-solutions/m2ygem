@@ -8,7 +8,12 @@ module CdtBaas
 
 		def rechargeReport(id)
 			response = @request.get(@url + RECHARGES + id.to_s)
-			rechargeResponse = CdtModel.new(response)
+			if !response.length > 0
+				rechargeResponse = CdtModel.new(response)
+			else
+				rechargeResponse = response
+			end
+			puts rechargeResponse
 			generateResponse(rechargeResponse)
 		end
 

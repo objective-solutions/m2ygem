@@ -12,6 +12,13 @@ module CdtBaas
 			generateResponse(transferResponse)
 		end
 
+		def getBankTransfers(id)
+			response = @request.get(@url + BANk_TRANSFER + ACCOUNT + id.to_s)
+			transferResponse = response
+			puts transferResponse
+			generateResponse(transferResponse)
+		end
+
 		def bankTransfersAdjustment(id)
 			response = @request.get(@url + BANk_TRANSFER_ADJUST + id.to_s)
 			transferResponse = CdtModel.new(response)

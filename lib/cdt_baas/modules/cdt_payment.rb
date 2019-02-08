@@ -20,6 +20,13 @@ module CdtBaas
 			generateResponse(payment)
 		end
 
+		def getPayment(id)
+			response = @request.get(@url + PAYMENT + ACCOUNT + id.to_s)
+			payment = response
+			puts payment
+			generateResponse(payment)
+		end
+
 		def paymentAdjustment(idAdjustment)
 			response = @request.get(@url + PAYMENT_ADJUSTMENT + idAdjustment)
 			payment = CdtModel.new(response)

@@ -31,15 +31,12 @@ puts "testando Contas"
 puts "testando Serviço"
 #a = CdtBaas::CdtService.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.p2pTransfer({})
-
+#a.getp2pTransfer({:idAccount => 26})
 
 puts "testando Payment"
-# a = CdtBaas::CdtPayment.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
-# puts ''
-# puts ''
+#a = CdtBaas::CdtPayment.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 # res = a.paymentAdjustment("123")
-# puts res
-
+#p a.getPayment(26)
 
 puts "testando Boleto"
 #a = CdtBaas::CdtBankSlip.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -49,7 +46,7 @@ puts "testando Boleto"
 	
 
 puts "testando Cartões"
-a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.findCard(30)
 #a.findCardData(30)
 #a.getCardLimit(30)
@@ -58,7 +55,7 @@ a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k
 #a.addHolder(-1, {})
 #a.updatePassword(-1, {})
 #a.getCards({:idConta => 2})
-a.findAccountCards({:idConta => 26})
+#a.findAccountCards({:idConta => 26})
 
 puts "testando Clientes"
 #a = CdtBaas::CdtClient.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -73,9 +70,10 @@ puts "testando Documentos"
 #a.registerDocument({})
 
 puts "testando Tranferência bancaria"
-#a = CdtBaas::CdtTransfer.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+a = CdtBaas::CdtTransfer.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.bankTransfers({}) # Parser Error
 #a.bankTransfersAdjustment({})
+a.getBankTransfers(23)
 
 puts "testando Transport Cards"
 #a = CdtBaas::CdtTransportCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -85,7 +83,7 @@ puts "testando Transport Cards"
 
 puts "testando Recargas"
 #a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
-#a.rechargeReport() # Parse Erro
+#a.rechargeReport(3) # Parse Erro
 #a.newRechargeSolicitation({})
 #a.getRechargeSolicitation() # Parse Erro
 #a.newRechargeOrder({})
