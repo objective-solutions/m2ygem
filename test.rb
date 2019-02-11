@@ -70,10 +70,10 @@ puts "testando Documentos"
 #a.registerDocument({})
 
 puts "testando Tranferência bancaria"
-a = CdtBaas::CdtTransfer.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtTransfer.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.bankTransfers({}) # Parser Error
 #a.bankTransfersAdjustment({})
-a.getBankTransfers(23)
+#a.getBankTransfers(23)
 
 puts "testando Transport Cards"
 #a = CdtBaas::CdtTransportCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -82,7 +82,7 @@ puts "testando Transport Cards"
 #a.newRecharge({})
 
 puts "testando Recargas"
-#a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.rechargeReport(3) # Parse Erro
 #a.newRechargeSolicitation({})
 #a.getRechargeSolicitation() # Parse Erro
@@ -91,6 +91,7 @@ puts "testando Recargas"
 #a.confirmRecharge(1, {})
 #a.consultRecharge()
 #a.adjustmentRecharge({})
+a.getRecharges(26)
 
 puts "testando Usuários"
 #a = CdtBaas::CdtUser.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")

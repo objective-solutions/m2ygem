@@ -53,6 +53,13 @@ module CdtBaas
 			generateResponse(rechargeResponse)
 		end
 
+		def getRecharges(id)
+			response = @request.get(@url + RECHARGES + ACCOUNT + id.to_s)
+			transferResponse = response
+			puts transferResponse
+			generateResponse(transferResponse)
+		end
+
 		def adjustmentRecharge(id)
 			response = @request.get(@url + RECHARGES + ADJUSTMENT + id)
 			rechargeResponse = CdtModel.new(response)
