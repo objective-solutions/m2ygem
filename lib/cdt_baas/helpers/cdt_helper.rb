@@ -20,7 +20,7 @@ module CdtBaas
 			puts finish_date.nil? ? true : finish_date.to_s
 			puts 'Tempo atual:'
 			puts Time.now
-			finish_date.nil? || (Time.parse(finish_date.to_s) - 45.minutes) < Time.now
+			finish_date.nil? || (Time.parse(finish_date.to_s) - 55.minutes) < Time.now
 		end
 
 
