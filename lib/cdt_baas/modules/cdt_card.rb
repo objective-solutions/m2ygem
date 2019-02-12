@@ -103,7 +103,7 @@ module CdtBaas
 	     end
 
 	   	 def updatePassword(id, body)
-	         response = @request.put(@url + CARD + id.to_s + '/' + UPDATE_PASSWORD + CdtHelper.conductorBodyToString(body), {}, [{:key => 'senha', :value => body[:password]}])
+	         response = @request.put(@url + CARD + id.to_s + '/' + UPDATE_PASSWORD, {}, [{:key => 'senha', :value => body[:password]}])
 	         person = CdtModel.new(response)
 	         person
 	     end
