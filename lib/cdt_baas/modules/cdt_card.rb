@@ -31,7 +31,7 @@ module CdtBaas
 	     end
 
 	     def passwordValidation(id, body)
-	         response = @request.get(@url + CARD + id.to_s + '/' + PASSWORD_VALIDATION + CdtHelper.conductorBodyToString(body))
+	         response = @request.get(@url + CARD + id.to_s + '/' + PASSWORD_VALIDATION + CdtHelper.conductorBodyToString(body), [{:key => 'senha', :value => body[:password]}])
 	         person = CdtModel.new(response)
 	         person
 	     end

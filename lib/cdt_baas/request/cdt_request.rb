@@ -32,7 +32,12 @@ module CdtBaas
       req.parsed_response
     end
 
-    def get(url)
+    def get(url, headers = [])
+      if headers.length > 0
+        headers.each do |header|
+          @headers[header[:key]] = header[:value]
+        end
+      end
       req = HTTParty.get(url,
                          headers: @headers
       )

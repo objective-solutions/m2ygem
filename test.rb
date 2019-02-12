@@ -46,7 +46,7 @@ puts "testando Boleto"
 	
 
 puts "testando Cartões"
-#a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.findCard(30)
 #a.findCardData(30)
 #a.getCardLimit(30)
@@ -56,6 +56,7 @@ puts "testando Cartões"
 #a.updatePassword(-1, {:password => "1230"})
 #a.getCards({:idConta => 2})
 #a.findAccountCards({:idConta => 26})
+a.passwordValidation(-1, {:password => "1230"})
 
 puts "testando Clientes"
 #a = CdtBaas::CdtClient.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
