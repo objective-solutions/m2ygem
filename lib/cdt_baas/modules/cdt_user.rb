@@ -19,7 +19,7 @@ module CdtBaas
     end
 
     def updateUser(id, body)
-      response = @request.put(@url + USER + id.to_s, body, true)
+      response = @request.put(@url + USER + id.to_s, body, [{:key => 'Content-Type', :value => 'application/json'}])
       userResponse = CdtModel.new(response)
       generateResponse(userResponse)
     end

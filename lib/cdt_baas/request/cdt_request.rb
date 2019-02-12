@@ -41,9 +41,11 @@ module CdtBaas
       req.parsed_response
     end
 
-    def put(url, body = {}, use_json = false)
-      if use_json
-        @headers["Content-Type"] = 'application/json'
+    def put(url, body = {}, headers = [])
+      if headers.length > 0
+        headers.each do |header|
+          @headers[header[:key]] = header[:value]
+        end
       end
 
       req = HTTParty.put(url,
