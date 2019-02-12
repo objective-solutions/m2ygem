@@ -8,8 +8,7 @@ module CdtBaas
 
 		def generateTicket(body)
 			response = @request.get(@url + BILLET + CdtHelper.conductorBodyToString(body))
-			person = CdtModel.new(response)
-			person
+			response
 		end
 
 	end
