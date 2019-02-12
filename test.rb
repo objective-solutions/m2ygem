@@ -82,7 +82,7 @@ puts "testando Transport Cards"
 #a.newRecharge({})
 
 puts "testando Recargas"
-a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.rechargeReport(3) # Parse Erro
 #a.newRechargeSolicitation({})
 #a.getRechargeSolicitation() # Parse Erro
@@ -91,7 +91,12 @@ a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkou
 #a.confirmRecharge(1, {})
 #a.consultRecharge()
 #a.adjustmentRecharge({})
-a.getRecharges(26)
+#a.getRecharges(26)
+
+puts "testando Billet"
+a = CdtBaas::CdtBillet.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a.newRechargeSolicitation({})
+a.generateTicket({:idConta => 26, :valor => 1, :tipoBoleto => 1, :dataVencimento => "12/02/2019"})
 
 puts "testando Usuários"
 #a = CdtBaas::CdtUser.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")

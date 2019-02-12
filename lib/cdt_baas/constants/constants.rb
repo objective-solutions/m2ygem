@@ -69,5 +69,6 @@ module CdtBaas
   LOGIN = "login/"
   ASSIGN_PROFILE = "assign-profile/"
   UNASSIGN_PROFILE = "unassign-profile/"
+  BILLET = "billet/"
 
 end
