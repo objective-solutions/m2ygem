@@ -30,6 +30,11 @@ module CdtBaas
 			person
 		end
 
+		def getPDF(id)
+			response = @request.get(@url + BANK_SLIP + id.to_s + '/' + PDF, [{:key => "accept", :value => "application/pdf"}])
+			response
+		end
+
 		def register(id)
 			response = @request.post(@url + BANK_SLIP + id.to_s + '/' + INVOICE_REGISTER_PATH, {})
 			person = CdtModel.new(response)

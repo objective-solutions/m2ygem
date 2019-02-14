@@ -39,14 +39,14 @@ puts "testando Payment"
 #p a.getPayment(26)
 
 puts "testando Boleto"
-#a = CdtBaas::CdtBankSlip.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+a = CdtBaas::CdtBankSlip.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.getBankSlip({})
 #a.findBankSlip({:id => 2})
 #a.register(-1)
-	
+a.getPDF(1)
 
 puts "testando Cartões"
-a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.findCard(30)
 #a.findCardData(30)
 #a.getCardLimit(30)
@@ -56,7 +56,7 @@ a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k
 #a.updatePassword(-1, {:password => "1230"})
 #a.getCards({:idConta => 2})
 #a.findAccountCards({:idConta => 26})
-a.passwordValidation(-3, {:password => "1230"})
+#a.passwordValidation(-3, {:password => "1230"})
 
 puts "testando Clientes"
 #a = CdtBaas::CdtClient.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -95,9 +95,9 @@ puts "testando Recargas"
 #a.getRecharges(26)
 
 puts "testando Billet"
-#a = CdtBaas::CdtBillet.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtBillet.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hm")
 #a.newRechargeSolicitation({})
-#a.generateTicket({:idConta => 26, :valor => 1, :tipoBoleto => 1, :dataVencimento => "12/02/2019"})
+#a.generateTicket({:idConta => 26, :valor => 10.0, :tipoBoleto => 9, :dataVencimento => "2019-12-02"})
 
 puts "testando Usuários"
 #a = CdtBaas::CdtUser.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")

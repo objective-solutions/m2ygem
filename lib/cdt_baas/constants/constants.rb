@@ -25,6 +25,7 @@ module CdtBaas
   INVOICES_PATH = "boletos/"
   INVOICE_REGISTER_PATH = "registrar/"
   INVOICE_PRINT_PATH = "arquivo.pdf"
+  PDF = "pdf"
   ACCOUNT_PATH = "contas/"
   TIMELINE_PATH = "timeline/"
   TRANSACTIONS_PATH = "transacoes/"
