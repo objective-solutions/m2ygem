@@ -70,6 +70,7 @@ module CdtBaas
   LOGIN = "login/"
   ASSIGN_PROFILE = "assign-profile/"
   UNASSIGN_PROFILE = "unassign-profile/"
+  PRE_PAID = "lotes-cartoes-pre-pagos/"
   BILLET = "billet"
 
 end
