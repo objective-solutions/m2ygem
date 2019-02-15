@@ -97,7 +97,7 @@ module CdtBaas
 	     end
 
 	   	 def addHolder(id, body)
-	         response = @request.put(@url + CARD + id.to_s + '/' + ADD_HOLDER + CANCEL_PATH + CdtHelper.conductorBodyToString(body))
+	         response = @request.put(@url + CARD + id.to_s + '/' + ADD_HOLDER + CdtHelper.conductorBodyToString(body))
 	         person = CdtModel.new(response)
 	         person
 	     end
@@ -108,6 +108,11 @@ module CdtBaas
 	         person
 	     end
 
+	     def createPrepaidCard(body)
+	         response = @request.post(@url + CARD + PRE_PAID + CdtHelper.conductorBodyToString(body), {})
+	         person = CdtModel.new(response)
+	         person
+	     end
  	end
 
 end
