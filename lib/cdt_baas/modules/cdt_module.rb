@@ -12,12 +12,12 @@ module CdtBaas
 
 
       def refreshToken
-      	puts 'verficando token'
-        if CdtHelper.shouldRefreshToken?
-          puts 'token atualizado'
+      	puts 'atualizando token'
+        #if CdtHelper.shouldRefreshToken?
+          #puts 'token atualizado'
       		@auth.generateToken
-          @request = CdtRequest.new
-      	end
+          #@request = CdtRequest.new
+      	#end
       end
 
       def generateResponse(input)
