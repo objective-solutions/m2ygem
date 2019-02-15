@@ -16,11 +16,7 @@ module CdtBaas
 
 		def self.shouldRefreshToken?
 			finish_date = ENV["CDT_TOKEN_EXPIRY"]
-			puts 'Tempo para expiração do token:'
-			puts finish_date.nil? ? true : finish_date.to_s
-			puts 'Tempo atual:'
-			puts Time.now
-			finish_date.nil? || (Time.parse(finish_date.to_s) - 3000) < Time.now
+			finish_date.nil? || (Time.parse(finish_date.to_s) - 500) < Time.now
 		end
 
 

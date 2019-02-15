@@ -5,8 +5,7 @@ puts "testando pessoas"
 #a = CdtBaas::CdtPerson.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 # person = a.createPerson({:nome => "Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 # person = a.updatePerson(3113,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
-#a.getPeople(75)
-
+#a.getPeople({:id => 81})
 # token = a.findPersonDetails(100)
 # person = a.updatePersonDetails(3000,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 
@@ -23,7 +22,8 @@ puts "testando Contas"
 #a.getUserAccounts({:idPessoa => 72})
 #a.getTimeline({:id => 30, :page => 0, :limit => 50})
 #a.getTransactions({:id => 30, :page => 0, :limit => 5, :idTipoTransacao => 3})
-#a.activeAccount({:id => 50})
+#a.getAccounts(27)
+CdtBaas::CdtRequest.setToken('aa')
 
 #a = CdtBaas::CdtInvoice.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.createInvoice({})
@@ -39,11 +39,11 @@ puts "testando Payment"
 #p a.getPayment(26)
 
 puts "testando Boleto"
-a = CdtBaas::CdtBankSlip.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtBankSlip.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.getBankSlip({})
 #a.findBankSlip({:id => 2})
 #a.register(-1)
-a.getPDF(1)
+#a.getPDF(1)
 
 puts "testando Cartões"
 #a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -54,7 +54,7 @@ puts "testando Cartões"
 #a.cancelCard(-1, {})
 #a.addHolder(-1, {})
 #a.updatePassword(-1, {:password => "1230"})
-#a.getCards({:idConta => 2})
+#a.getCards({:idConta => 27})
 #a.findAccountCards({:idConta => 26})
 #a.passwordValidation(-3, {:password => "1230"})
 

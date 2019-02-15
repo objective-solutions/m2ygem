@@ -9,9 +9,10 @@ module CdtBaas
 
       def generateToken
       	response = @request.post(@url + TOKEN_PATH, {})
-        p 'Token gerado'
-        p response
+        puts 'token gerado: '
         token = CdtModel.new(response)
+        puts token
+        CdtBaas.CdtRequest.setToken(token)
         CdtHelper.saveToken(token.access_token)
         CdtHelper.generate_general_response(token)
 	   end

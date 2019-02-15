@@ -12,7 +12,7 @@ module CdtBaas
 			 generateResponse(invoice)
 	     end
 
-		  def createInvoice(body)
+		 def createInvoice(body)
 			response = @request.post(@url + INVOICES_PATH, body, true)
 			invoice = CdtModel.new(response)
 			generateResponse(invoice)

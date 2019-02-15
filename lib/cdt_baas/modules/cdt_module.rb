@@ -10,14 +10,11 @@ module CdtBaas
         @url = CdtHelper.homologation?(env) ? URL_HML : URL_PRD
       end
 
-
       def refreshToken
-      	puts 'atualizando token'
-        #if CdtHelper.shouldRefreshToken?
-          #puts 'token atualizado'
+        if CdtHelper.shouldRefreshToken?
       		@auth.generateToken
-          #@request = CdtRequest.new
-      	#end
+          @request = CdtRequest.new
+      	end
       end
 
       def generateResponse(input)

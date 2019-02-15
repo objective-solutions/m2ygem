@@ -16,6 +16,13 @@ module CdtBaas
       }
     end
 
+    def self.setToken(token)
+      if @headers.nil?
+        @headers = {}
+      end
+      @headers["Authorization"] = token
+    end
+
     def post(url, body, use_json = false)
       if use_json
         @headers["Content-Type"] = 'application/json'
