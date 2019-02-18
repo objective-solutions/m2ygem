@@ -1,6 +1,5 @@
 module CdtBaas
 
-
   class CdtModule
 
       def startModule(user, password, env)
@@ -20,6 +19,6 @@ module CdtBaas
       def generateResponse(input)
         CdtHelper.generate_general_response(input)
       end
-end
+  end
 
 end

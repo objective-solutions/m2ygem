@@ -28,14 +28,10 @@ module CdtBaas
         @headers["Content-Type"] = 'application/json'
       end
 
-      puts @headers
-
       req = HTTParty.post(url,
                           body: body.to_json,
                           headers: @headers
       )
-      puts url
-      puts req.parsed_response
       req.parsed_response
     end
 
@@ -48,8 +44,6 @@ module CdtBaas
       req = HTTParty.get(url,
                          headers: @headers
       )
-      puts url
-      puts req.parsed_response
       req.parsed_response
     end
 
@@ -64,8 +58,6 @@ module CdtBaas
                          headers: @headers,
                          body: body.to_json
       )
-      puts url
-      puts req.parsed_response
       req.parsed_response
     end
 

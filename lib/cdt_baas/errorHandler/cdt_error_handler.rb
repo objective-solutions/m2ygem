@@ -93,8 +93,6 @@ module CdtBaas
             elsif !cdtResponse[:message].nil?
                 @reasons << cdtResponse[:message]
             elsif !cdtResponse[:error].nil?
-                puts 'cdtREP'
-                puts cdtResponse[:error]
                 @reasons << cdtResponse[:error]
             end
         end
