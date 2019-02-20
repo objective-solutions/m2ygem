@@ -6,28 +6,24 @@ module CdtBaas
 		end
 
 		def getPhones(body)
-			refreshToken
 			response = @request.get(@url + PHONES_PATH + CdtHelper.conductorBodyToString(body))
 			phonesResponse = CdtModel.new(response)
 			generateResponse(phonesResponse)
 		end
 
 		def createPhone(body)
-         	refreshToken
 			response = @request.post(@url + PHONES_PATH + CdtHelper.conductorBodyToString(body), {})
 			phonesResponse = CdtModel.new(response)
 			generateResponse(phonesResponse)
 		end
 
 		def findPhone(id)
-         	refreshToken
 			response = @request.get(@url + PHONES_PATH + id.to_s)
 			phonesResponse = CdtModel.new(response)
 			generateResponse(phonesResponse)
 		end
 
 		def updatePhone(body)
-			refreshToken
 			response = @request.put(@url + PHONES_PATH + CdtHelper.conductorBodyToString(body), {})
 			phonesResponse = CdtModel.new(response)
 			generateResponse(phonesResponse)

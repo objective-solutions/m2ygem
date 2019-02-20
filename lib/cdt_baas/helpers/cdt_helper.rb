@@ -10,7 +10,7 @@ module CdtBaas
 		def self.saveToken(token)
 			if !token.nil?
 				ENV["CDT_TOKEN"] = token.to_s
-				ENV["CDT_TOKEN_EXPIRY"] = (Time.now + 3600).to_s
+				ENV["CDT_TOKEN_EXPIRY"] = (Time.now + 1500).to_s
 			end
 		end
 

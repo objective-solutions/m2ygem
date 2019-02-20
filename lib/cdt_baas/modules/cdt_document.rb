@@ -7,7 +7,6 @@ module CdtBaas
 		end
 
 		def registerDocument(body)
-	 	 	refreshToken
 			response = @request.post(@url + GENERATE_DOCUMENT + CdtHelper.conductorBodyToString(body), {}, true)
 			person = CdtModel.new(response)
 			person

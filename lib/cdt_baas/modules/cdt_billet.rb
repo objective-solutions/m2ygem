@@ -7,7 +7,6 @@ module CdtBaas
 		end
 
 		def generateTicket(body)
-			refreshToken
 			response = @request.get(@url + BILLET + CdtHelper.conductorBodyToString(body))
 			response
 		end

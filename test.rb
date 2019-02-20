@@ -5,7 +5,7 @@ puts "testando pessoas"
 #a = CdtBaas::CdtPerson.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 # person = a.createPerson({:nome => "Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 # person = a.updatePerson(3113,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
-#a.getPeople({:id => 81})
+#puts a.getPeople({:cpf => "80000000000"})
 # token = a.findPersonDetails(100)
 # person = a.updatePersonDetails(3000,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 
@@ -18,11 +18,11 @@ puts "testando enderecos"
 
 
 puts "testando Contas"
-a = CdtBaas::CdtAccount.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtAccount.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.getUserAccounts({:idPessoa => 72})
 #a.getTimeline({:id => 30, :page => 0, :limit => 50})
 #a.getTransactions({:id => 30, :page => 0, :limit => 5, :idTipoTransacao => 3})
-a.getAccounts(27)
+#puts a.getUserAccounts({:cpf => "80000000000"})
 #CdtBaas::CdtRequest.setToken('aa')
 
 #a = CdtBaas::CdtInvoice.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -31,7 +31,7 @@ a.getAccounts(27)
 puts "testando Serviço"
 #a = CdtBaas::CdtService.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.p2pTransfer({})
-#a.getp2pTransfer({:idAccount => 26})
+#puts a.getp2pTransfer({:idAccount => 26})
 
 puts "testando Payment"
 #a = CdtBaas::CdtPayment.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -39,11 +39,11 @@ puts "testando Payment"
 #p a.getPayment(26)
 
 puts "testando Boleto"
-a = CdtBaas::CdtBankSlip.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtBankSlip.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.getBankSlip({})
 #a.findBankSlip({:id => 2})
 #a.register(-1)
-a.getPDF(1)
+#a.getPDF(1)
 
 puts "testando Cartões"
 #a = CdtBaas::CdtCard.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -88,7 +88,7 @@ puts "testando Recargas"
 #a.newRechargeSolicitation({})
 #a.getRechargeSolicitation() # Parse Erro
 #a.newRechargeOrder({})
-#a.confirmDealers()
+#puts a.confirmDealers()
 #a.confirmRecharge(1, {})
 #a.consultRecharge()
 #a.adjustmentRecharge({})
@@ -106,3 +106,6 @@ puts "testando Usuários"
 #a.updateUser({})
 #a.findUser(101) # undefined method `each_pair' for #<String:0x00007fdb762296e8> (NoMethodError)
 #a.assignProfile(1, {})
+
+a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+a.refreshToken()
