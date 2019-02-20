@@ -2,8 +2,8 @@ module CdtBaas
 
   class CdtModule
 
-      def startModule(user, password, env)
-        @auth = CdtAuth.new(user, password, env)
+      def startModule(token, env)
+        @auth = CdtAuth.new(token, env)
         refreshToken
         @request = CdtRequest.new
         @url = CdtHelper.homologation?(env) ? URL_HML : URL_PRD

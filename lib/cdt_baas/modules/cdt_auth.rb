@@ -2,8 +2,8 @@ module CdtBaas
 
 	class CdtAuth 
 
-      def initialize(user, password, env)
-        @request = CdtRequest.new(user, password)
+      def initialize(token, env)
+        @request = CdtRequest.new(token)
         @url = CdtHelper.homologation?(env) ? TOKEN_HML : TOKEN_PRD
       end
 

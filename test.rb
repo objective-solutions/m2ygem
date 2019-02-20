@@ -2,11 +2,11 @@ require "cdt_baas"
 
 
 puts "testando pessoas"
-#a = CdtBaas::CdtPerson.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+a = CdtBaas::CdtPerson.new("Basic NHBxZDNjOGozZ3FzaWtjZWE4bHRsYmRjY2I6MXZkZ20xNmk0Njk1b3J2aGJrb3VvbTFrOGpyMmpsZ2R2dXFnZHBpcm8waG9jN2Vic2pjMw", "hml")
 # person = a.createPerson({:nome => "Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 # person = a.updatePerson(3113,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
-#puts a.getPeople({:cpf => "80000000000"})
-# token = a.findPersonDetails(100)
+puts a.getPeople({})#{:cpf => "02417929910"})
+#puts a.findPersonDetails(81)
 # person = a.updatePersonDetails(3000,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 
 
@@ -29,9 +29,9 @@ puts "testando Contas"
 #a.createInvoice({})
 
 puts "testando Serviço"
-#a = CdtBaas::CdtService.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtService.new("Basic NHBxZDNjOGozZ3FzaWtjZWE4bHRsYmRjY2I6MXZkZ20xNmk0Njk1b3J2aGJrb3VvbTFrOGpyMmpsZ2R2dXFnZHBpcm8waG9jN2Vic2pjMw", "hml")
 #a.p2pTransfer({})
-#puts a.getp2pTransfer({:idAccount => 26})
+#puts a.findp2pTransfer({:id => 56780})
 
 puts "testando Payment"
 #a = CdtBaas::CdtPayment.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -56,7 +56,7 @@ puts "testando Cartões"
 #a.updatePassword(-1, {:password => "1230"})
 #a.getCards({:idConta => 27})
 #a.findAccountCards({:idConta => 26})
-#a.passwordValidation(-3, {:password => "1230"})
+#a.passwordValidation(26, {:password => "2809"})
 
 puts "testando Clientes"
 #a = CdtBaas::CdtClient.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -99,6 +99,10 @@ puts "testando Billet"
 #a.newRechargeSolicitation({})
 #a.generateTicket({:idConta => 26, :valor => 10.0, :tipoBoleto => 9, :dataVencimento => "2019-12-02"})
 
+puts "testando Telefone"
+#a = CdtBaas::CdtPhone.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hm")
+#a.getPhones({})
+
 puts "testando Usuários"
 #a = CdtBaas::CdtUser.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.getUsers() # undefined method `each_pair' for #<String:0x00007fdb762296e8> (NoMethodError)
@@ -106,6 +110,3 @@ puts "testando Usuários"
 #a.updateUser({})
 #a.findUser(101) # undefined method `each_pair' for #<String:0x00007fdb762296e8> (NoMethodError)
 #a.assignProfile(1, {})
-
-a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
-a.refreshToken()

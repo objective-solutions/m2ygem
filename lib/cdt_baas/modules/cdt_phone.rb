@@ -1,8 +1,8 @@
 module CdtBaas
 
 	class CdtPhone < CdtModule
-		def initialize(user, password, env)
-			startModule(user, password, env)
+		def initialize(token, env)
+			startModule(token, env)
 		end
 
 		def getPhones(body)

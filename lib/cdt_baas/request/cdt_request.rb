@@ -4,9 +4,9 @@ module CdtBaas
 
   class CdtRequest
 
-    def initialize(user = nil, password = nil)
-      if !user.nil? && !password.nil?
-        auth = "Basic " + Base64::strict_encode64(user + ":" + password)
+    def initialize(token = nil)
+      if !token.nil?
+        auth = token
       else
         auth = ENV["CDT_TOKEN"]
       end

@@ -2,8 +2,8 @@ module CdtBaas
 
 	class CdtService < CdtModule
 
-		def initialize(user, password, env)
-			startModule(user, password, env)
+		def initialize(token, env)
+			startModule(token, env)
 		end
 
 		def p2pTransfer(body)
@@ -14,6 +14,12 @@ module CdtBaas
 
 		def getp2pTransfer(body)
 			response = @request.get(@url + P2P_PATH + DETAILS + CdtHelper.conductorBodyToString(body))
+			p2pResponse = response
+			generateResponse(p2pResponse)
+		end
+
+		def findp2pTransfer(body)
+			response = @request.get(@url + P2P_PATH + CdtHelper.conductorBodyToString(body))
 			p2pResponse = response
 			generateResponse(p2pResponse)
 		end

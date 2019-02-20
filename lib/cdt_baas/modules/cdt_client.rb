@@ -2,8 +2,8 @@ module CdtBaas
 
 	class CdtClient < CdtModule
 
-		def initialize(user, password, env)
-			startModule(user, password, env)
+		def initialize(token, env)
+			startModule(token, env)
 		end
 
 		def registerPFAccount(body)
