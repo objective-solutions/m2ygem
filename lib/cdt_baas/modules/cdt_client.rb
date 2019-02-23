@@ -7,13 +7,13 @@ module CdtBaas
 		end
 
 		def registerPFAccount(body)
-			response = @request.post(@url + REGISTER_PF_ACCOUNT + CdtHelper.conductorBodyToString(body), {}, true)
+			response = @request.post(@url + REGISTER_PF_ACCOUNT, body, true)
 			person = CdtModel.new(response)
 			person
 		end
 
 		def registerPJAccount(body)
-			response = @request.post(@url + REGISTER_PJ_ACCOUNT + CdtHelper.conductorBodyToString(body), {}, true)
+			response = @request.post(@url + REGISTER_PF_ACCOUNT, body, true)
 			person = CdtModel.new(response)
 			person
 		end
