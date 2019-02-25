@@ -7,7 +7,7 @@ module CdtBaas
 		end
 
 		def payment(body)
-			response = @request.post(@url + V1_PAYMENT, body, true)
+			response = @request.post(@url + PAYMENT, body, true)
 			payment = CdtModel.new(response)
 			generateResponse(payment)
 		end

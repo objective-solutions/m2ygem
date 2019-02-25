@@ -15,6 +15,7 @@ module CdtBaas
   #paths
   TOKEN_PATH = "oauth2/token?grant_type=client_credentials"
 
+  API = "api/"
   DETAILS = "details/"
   ACCOUNT = "account/"
   PEOPLE_PATH = "pessoas/"
