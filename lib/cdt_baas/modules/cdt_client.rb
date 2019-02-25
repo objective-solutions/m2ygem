@@ -13,7 +13,7 @@ module CdtBaas
 		end
 
 		def registerPJAccount(body)
-			response = @request.post(@url + REGISTER_PF_ACCOUNT, body, true)
+			response = @request.post(@url + REGISTER_PJ_ACCOUNT, body, true)
 			person = CdtModel.new(response)
 			person
 		end
