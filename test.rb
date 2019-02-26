@@ -2,10 +2,10 @@ require "cdt_baas"
 
 
 puts "testando pessoas"
-a = CdtBaas::CdtPerson.new("Basic NHBxZDNjOGozZ3FzaWtjZWE4bHRsYmRjY2I6MXZkZ20xNmk0Njk1b3J2aGJrb3VvbTFrOGpyMmpsZ2R2dXFnZHBpcm8waG9jN2Vic2pjMw", "hml")
+#a = CdtBaas::CdtPerson.new("Basic NHBxZDNjOGozZ3FzaWtjZWE4bHRsYmRjY2I6MXZkZ20xNmk0Njk1b3J2aGJrb3VvbTFrOGpyMmpsZ2R2dXFnZHBpcm8waG9jN2Vic2pjMw", "hml")
 # person = a.createPerson({:nome => "Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 # person = a.updatePerson(3113,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
-puts a.getPeople({})#{:cpf => "02417929910"})
+#puts a.getPeople({})#{:cpf => "02417929910"})
 #puts a.findPersonDetails(81)
 # person = a.updatePersonDetails(3000,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 
@@ -18,10 +18,10 @@ puts "testando enderecos"
 
 
 puts "testando Contas"
-#a = CdtBaas::CdtAccount.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+a = CdtBaas::CdtAccount.new("Basic bTBrc2I1aTQ4bTRuNmFmYWVuaXQ0MGY4YjptbmFlcWZsb3JiN2NjY2JtaWYxaWwxa2U0YWdtNjIxa2w5dnM5cmdoZTRtb25ldGFlYms", "hmsl")
 #a.getUserAccounts({:idPessoa => 72})
 #a.getTimeline({:id => 30, :page => 0, :limit => 50})
-#a.getTransactions({:id => 30, :page => 0, :limit => 5, :idTipoTransacao => 3})
+p a.getTransactions({:id => 50})
 #puts a.getUserAccounts({:cpf => "80000000000"})
 #CdtBaas::CdtRequest.setToken('aa')
 

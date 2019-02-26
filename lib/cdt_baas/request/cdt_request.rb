@@ -31,6 +31,7 @@ module CdtBaas
                           body: body.to_json,
                           headers: @headers
       )
+      req.parsed_response[:statusCode] = req.code
       req.parsed_response
     end
 
@@ -43,6 +44,7 @@ module CdtBaas
       req = HTTParty.get(url,
                          headers: @headers
       )
+      req.parsed_response[:statusCode] = req.code
       req.parsed_response
     end
 
@@ -57,6 +59,7 @@ module CdtBaas
                          headers: @headers,
                          body: body.to_json
       )
+      req.parsed_response[:statusCode] = req.code
       req.parsed_response
     end
 
@@ -64,6 +67,7 @@ module CdtBaas
       req = HTTParty.delete(url,
                             headers: @headers
       )
+      req.parsed_response[:statusCode] = req.code
       req.parsed_response
     end
 
