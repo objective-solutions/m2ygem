@@ -44,9 +44,6 @@ module CdtBaas
       req = HTTParty.get(url,
                          headers: @headers
       )
-      if !req.parsed_response.kind_of?(Array)
-        req.parsed_response[:statusCode] = req.code
-      end
       req.parsed_response
     end
 

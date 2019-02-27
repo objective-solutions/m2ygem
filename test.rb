@@ -33,9 +33,9 @@ puts "testando Serviço"
 #puts a.findp2pTransfer({:id => 56780})
 
 puts "testando Payment"
-a = CdtBaas::CdtPayment.new("Basic NHBxZDNjOGozZ3FzaWtjZWE4bHRsYmRjY2I6MXZkZ20xNmk0Njk1b3J2aGJrb3VvbTFrOGpyMmpsZ2R2dXFnZHBpcm8waG9jN2Vic2pjMw", "hml")
+# a = CdtBaas::CdtPayment.new("Basic NHBxZDNjOGozZ3FzaWtjZWE4bHRsYmRjY2I6MXZkZ20xNmk0Njk1b3J2aGJrb3VvbTFrOGpyMmpsZ2R2dXFnZHBpcm8waG9jN2Vic2pjMw", "hml")
 # res = a.paymentAdjustment("123")
-p a.getPayment(26)
+# p a.getPayment(26)
 
 puts "testando Boleto"
 #a = CdtBaas::CdtBankSlip.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
@@ -82,7 +82,7 @@ puts "testando Transport Cards"
 #a.newRecharge({})
 
 puts "testando Recargas"
-#a = CdtBaas::CdtRecharge.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+a = CdtBaas::CdtRecharge.new("Basic bTBrc2I1aTQ4bTRuNmFmYWVuaXQ0MGY4YjptbmFlcWZsb3JiN2NjY2JtaWYxaWwxa2U0YWdtNjIxa2w5dnM5cmdoZTRtb25ldGFlYms", "sshml")
 #a.rechargeReport(3) # Parse Erro
 #a.newRechargeSolicitation({})
 #a.getRechargeSolicitation() # Parse Erro
@@ -91,7 +91,7 @@ puts "testando Recargas"
 #a.confirmRecharge(1, {})
 #a.consultRecharge()
 #a.adjustmentRecharge({})
-#a.getRecharges(26)
+p a.getRecharges(26)
 
 puts "testando Billet"
 #a = CdtBaas::CdtBillet.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hm")
