@@ -4,11 +4,11 @@ module CdtBaas
 
   class CdtRequest
 
-    def initialize(token = nil)
+    def initialize(token = nil, basic)
       if !token.nil?
         auth = token
       else
-        auth = ENV["CDT_TOKEN"]
+        auth = ENV["CDT_TOKEN#{basic}"]
       end
       @headers = {
           "Content-Type" => 'application/x-www-form-urlencoded',
