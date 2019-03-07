@@ -13,12 +13,14 @@ module CdtBaas
 			puts "basic : #{basic}"
 			puts "basic : #{basic}"
 			puts "basic : #{basic}"
+			puts "token : #{token}"
 			if !token.nil?
 				ENV["CDT_TOKEN#{basic}"] = token.to_s
 				ENV["CDT_TOKEN_EXPIRY#{basic}"] = (Time.now + 1500).to_s
 			end
 
-			
+			puts "env : " + ENV["CDT_TOKEN#{basic}"].to_s
+
 		end
 
 		def self.shouldRefreshToken?(basic)
