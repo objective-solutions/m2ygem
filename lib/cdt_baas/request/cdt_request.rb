@@ -14,6 +14,12 @@ module CdtBaas
           "Content-Type" => 'application/x-www-form-urlencoded',
           "Authorization" => auth
       }
+
+      puts @headers.to_s
+      puts @headers.to_s
+      puts @headers.to_s
+      puts @headers.to_s
+      puts @headers.to_s
     end
 
     def self.setToken(token)
