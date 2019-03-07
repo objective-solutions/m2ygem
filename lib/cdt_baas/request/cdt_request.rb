@@ -30,6 +30,9 @@ module CdtBaas
     end
 
     def post(url, body, use_json = false)
+      puts url
+      puts url
+      puts url
       if use_json
         @headers["Content-Type"] = 'application/json'
       end
@@ -42,6 +45,9 @@ module CdtBaas
     end
 
     def get(url, headers = [])
+      puts url
+      puts url
+      puts url
       if headers.length > 0
         headers.each do |header|
           @headers[header[:key]] = header[:value]
