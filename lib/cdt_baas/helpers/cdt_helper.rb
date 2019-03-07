@@ -7,20 +7,16 @@ module CdtBaas
 			env == HOMOLOGATION
 		end
 
-		def self.saveToken(token)
+		def self.saveToken(basic,token)
 			if !token.nil?
-				ENV["CDT_TOKEN"] = token.to_s
-				ENV["CDT_TOKEN_EXPIRY"] = (Time.now + 3600).to_s
+				ENV["CDT_TOKEN#{basic}"] = token.to_s
+				ENV["CDT_TOKEN_EXPIRY#{basic}"] = (Time.now + 1500).to_s
 			end
 		end
 
-		def self.shouldRefreshToken?
-			finish_date = ENV["CDT_TOKEN_EXPIRY"]
-			puts 'Tempo para expiração do token:'
-			puts finish_date.nil? ? true : finish_date.to_s
-			puts 'Tempo atual:'
-			puts Time.now
-			finish_date.nil? || (Time.parse(finish_date.to_s) - 3000) < Time.now
+		def self.shouldRefreshToken?(basic)
+			finish_date = ENV["CDT_TOKEN_EXPIRY#{basic}"]
+			finish_date.nil? || (Time.parse(finish_date.to_s) - 500) < Time.now
 		end
 
 
@@ -49,8 +45,6 @@ module CdtBaas
 						content: input
 				}
 			end
-			puts 'generateResponse'
-			puts response
 			response
 		end
 	end

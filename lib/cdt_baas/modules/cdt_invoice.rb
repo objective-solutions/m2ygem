@@ -2,8 +2,8 @@ module CdtBaas
 
 	class CdtInvoice < CdtModule
 
-	     def initialize(user, password, env)
-	        startModule(user, password, env)
+	     def initialize(token, env)
+	        startModule(token, env)
 	     end
 
 	 	 def getInvoices(body)
@@ -12,7 +12,7 @@ module CdtBaas
 			 generateResponse(invoice)
 	     end
 
-		  def createInvoice(body)
+		 def createInvoice(body)
 			response = @request.post(@url + INVOICES_PATH, body, true)
 			invoice = CdtModel.new(response)
 			generateResponse(invoice)

@@ -2,8 +2,8 @@ module CdtBaas
 
 	class CdtTransfer < CdtModule
 
-		def initialize(user, password, env)
-			startModule(user, password, env)
+		def initialize(token, env)
+			startModule(token, env)
 		end
 
 		def bankTransfers(body)
@@ -15,7 +15,6 @@ module CdtBaas
 		def getBankTransfers(id)
 			response = @request.get(@url + BANk_TRANSFER + ACCOUNT + id.to_s)
 			transferResponse = response
-			puts transferResponse
 			generateResponse(transferResponse)
 		end
 

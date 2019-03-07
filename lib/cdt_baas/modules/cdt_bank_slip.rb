@@ -2,8 +2,8 @@ module CdtBaas
 
 	class CdtBankSlip < CdtModule
 
-		def initialize(user, password, env)
-			startModule(user, password, env)
+		def initialize(token, env)
+			startModule(token, env)
 		end
 
 		def getBankSlip(body)
@@ -31,7 +31,7 @@ module CdtBaas
 		end
 
 		def getPDF(id)
-			response = @request.get(@url + BANK_SLIP + id.to_s + '/' + PDF, [{:key => "accept", :value => "application/pdf"}])
+			response = @request.get(@url + BANK_SLIP + id.to_s + '/' + PDF)
 			response
 		end
 

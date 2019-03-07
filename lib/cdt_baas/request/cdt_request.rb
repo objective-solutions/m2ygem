@@ -4,9 +4,9 @@ module CdtBaas
 
   class CdtRequest
 
-    def initialize(user = nil, password = nil)
-      if !user.nil? && !password.nil?
-        auth = "Basic " + Base64::strict_encode64(user + ":" + password)
+    def initialize(token = nil)
+      if !token.nil?
+        auth = token
       else
         auth = ENV["CDT_TOKEN"]
       end
@@ -16,19 +16,22 @@ module CdtBaas
       }
     end
 
+    def self.setToken(token)
+      if @headers.nil?
+        @headers = {}
+      end
+      @headers["Authorization"] = token
+    end
+
     def post(url, body, use_json = false)
       if use_json
         @headers["Content-Type"] = 'application/json'
       end
-
-      puts @headers
-
       req = HTTParty.post(url,
                           body: body.to_json,
                           headers: @headers
       )
-      puts url
-      puts req.parsed_response
+      req.parsed_response[:statusCode] = req.code
       req.parsed_response
     end
 
@@ -41,8 +44,6 @@ module CdtBaas
       req = HTTParty.get(url,
                          headers: @headers
       )
-      puts url
-      puts req.parsed_response
       req.parsed_response
     end
 
@@ -57,8 +58,7 @@ module CdtBaas
                          headers: @headers,
                          body: body.to_json
       )
-      puts url
-      puts req.parsed_response
+      req.parsed_response[:statusCode] = req.code
       req.parsed_response
     end
 
@@ -66,6 +66,7 @@ module CdtBaas
       req = HTTParty.delete(url,
                             headers: @headers
       )
+      req.parsed_response[:statusCode] = req.code
       req.parsed_response
     end
 

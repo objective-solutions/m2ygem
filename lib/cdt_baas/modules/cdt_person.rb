@@ -4,8 +4,8 @@ module CdtBaas
 	class CdtPerson < CdtModule
 
 
-     def initialize(user, password, env)
-        startModule(user, password, env)
+     def initialize(token, env)
+        startModule(token, env)
      end
 
      def getPeople(body)
@@ -51,8 +51,6 @@ module CdtBaas
          person = CdtModel.new(response)
          person
      end
-
-     
 
 	end
 

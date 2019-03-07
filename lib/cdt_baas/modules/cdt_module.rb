@@ -1,20 +1,17 @@
 module CdtBaas
 
-
   class CdtModule
 
-      def startModule(user, password, env)
-        @auth = CdtAuth.new(user, password, env)
+      def startModule(token, env)
+        @auth = CdtAuth.new(token, env)
         refreshToken
         @request = CdtRequest.new
+        @basic = token
         @url = CdtHelper.homologation?(env) ? URL_HML : URL_PRD
       end
 
-
       def refreshToken
-      	puts 'verficando token'
-        if CdtHelper.shouldRefreshToken?
-          puts 'token atualizado'
+        if CdtHelper.shouldRefreshToken?(@basic)
       		@auth.generateToken
           @request = CdtRequest.new
       	end
@@ -23,6 +20,6 @@ module CdtBaas
       def generateResponse(input)
         CdtHelper.generate_general_response(input)
       end
-end
+  end
 
 end

@@ -15,6 +15,7 @@ module CdtBaas
   #paths
   TOKEN_PATH = "oauth2/token?grant_type=client_credentials"
 
+  API = "api/"
   DETAILS = "details/"
   ACCOUNT = "account/"
   PEOPLE_PATH = "pessoas/"
@@ -54,8 +55,8 @@ module CdtBaas
   UNLOCKED = "desbloquear/"
   ADD_HOLDER = "atribuir-titular/"
   UPDATE_PASSWORD = "alterar-senha/"    
-  REGISTER_PF_ACCOUNT = "clientes-pessoas-fisica/"  
-  REGISTER_PJ_ACCOUNT = "clientes-pessoas-juridicas/"  
+  REGISTER_PF_ACCOUNT = "clientes/pf"  
+  REGISTER_PJ_ACCOUNT = "clientes/pj"  
   GENERATE_DOCUMENT = "generatedocument/"
   BANk_TRANSFER = "banktransfers/"    
   BANk_TRANSFER_ADJUST = "banktransfers/adjustment/" 

@@ -2,8 +2,8 @@ module CdtBaas
 
 	class CdtRecharge < CdtModule
 
-		def initialize(user, password, env)
-			startModule(user, password, env)
+		def initialize(token, env)
+			startModule(token, env)
 		end
 
 		def rechargeReport(id)
@@ -13,7 +13,6 @@ module CdtBaas
 			else
 				rechargeResponse = response
 			end
-			puts rechargeResponse
 			generateResponse(rechargeResponse)
 		end
 
@@ -56,7 +55,6 @@ module CdtBaas
 		def getRecharges(id)
 			response = @request.get(@url + RECHARGES + ACCOUNT + id.to_s)
 			transferResponse = response
-			puts transferResponse
 			generateResponse(transferResponse)
 		end
 
