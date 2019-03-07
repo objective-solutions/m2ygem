@@ -14,12 +14,6 @@ module CdtBaas
           "Content-Type" => 'application/x-www-form-urlencoded',
           "Authorization" => auth
       }
-
-      puts @headers.to_s
-      puts @headers.to_s
-      puts @headers.to_s
-      puts @headers.to_s
-      puts @headers.to_s
     end
 
     def self.setToken(token)
@@ -30,9 +24,6 @@ module CdtBaas
     end
 
     def post(url, body, use_json = false)
-      puts url
-      puts url
-      puts url
       if use_json
         @headers["Content-Type"] = 'application/json'
       end
@@ -45,9 +36,6 @@ module CdtBaas
     end
 
     def get(url, headers = [])
-      puts url
-      puts url
-      puts url
       if headers.length > 0
         headers.each do |header|
           @headers[header[:key]] = header[:value]
