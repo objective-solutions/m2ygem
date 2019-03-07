@@ -3,7 +3,7 @@ module CdtBaas
 	class CdtAuth 
 
       def initialize(token, env)
-        @request = CdtRequest.new(token)
+        @request = CdtRequest.new(nil, token)
         @basic = token
         @url = CdtHelper.homologation?(env) ? TOKEN_HML : TOKEN_PRD
       end
