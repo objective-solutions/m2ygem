@@ -67,7 +67,7 @@ module CdtBaas
 		end	
 
     	def createAccount(body)
-         	response = @request.post(@url + ACCOUNT_PATH + CdtHelper.conductorBodyToString(body), {})
+         	response = @request.post(@url + ACCOUNT_PATH + CdtHelper.conductorBodyToString(body), body, true)
          	person = CdtModel.new(response)
          	person
      	end
