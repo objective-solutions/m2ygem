@@ -4,11 +4,11 @@ module CdtBaas
 
   class CdtRequest
 
-    def initialize(token = nil)
+    def initialize(token = nil, basic)
       if !token.nil?
         auth = token
       else
-        auth = ENV["CDT_TOKEN"]
+        auth = ENV["CDT_TOKEN#{basic[0,6]}"]
       end
       @headers = {
           "Content-Type" => 'application/x-www-form-urlencoded',
@@ -75,17 +75,12 @@ module CdtBaas
     end
 
     def validResponse(req)
-      p 'req'
-      p req
       begin
-        response = req.parsed_response.to_s
-        p 'response'
-        p response
-        if validJson?(response)
-          req.parsed_response[:statusCode] = req.code
-          p 'req.parsed_response'
-          p req.parsed_response
+        respose = req.parsed_response
+        if respose.kind_of?(Hash)
+          respose[:statusCode] = req.code
         end
+        respose
       rescue
         {:message => "Erro interno Baas"}
       end

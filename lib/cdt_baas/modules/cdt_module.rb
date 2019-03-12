@@ -4,15 +4,16 @@ module CdtBaas
 
       def startModule(token, env)
         @auth = CdtAuth.new(token, env)
+        @basic = token
         refreshToken
-        @request = CdtRequest.new
+        @request = CdtRequest.new(nil, @basic)
         @url = CdtHelper.homologation?(env) ? URL_HML : URL_PRD
       end
 
       def refreshToken
-        if CdtHelper.shouldRefreshToken?
+        if CdtHelper.shouldRefreshToken?(@basic)
       		@auth.generateToken
-          @request = CdtRequest.new
+          @request = CdtRequest.new(nil, @basic)
       	end
       end
 

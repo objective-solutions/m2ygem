@@ -7,15 +7,15 @@ module CdtBaas
 			env == HOMOLOGATION
 		end
 
-		def self.saveToken(token)
+		def self.saveToken(basic,token)
 			if !token.nil?
-				ENV["CDT_TOKEN"] = token.to_s
-				ENV["CDT_TOKEN_EXPIRY"] = (Time.now + 1500).to_s
+				ENV["CDT_TOKEN#{basic[0,6]}"] = token.to_s
+				ENV["CDT_TOKEN_EXPIRY#{basic[0,6]}"] = (Time.now + 1500).to_s
 			end
 		end
 
-		def self.shouldRefreshToken?
-			finish_date = ENV["CDT_TOKEN_EXPIRY"]
+		def self.shouldRefreshToken?(basic)
+			finish_date = ENV["CDT_TOKEN_EXPIRY#{basic[0,6]}"]
 			finish_date.nil? || (Time.parse(finish_date.to_s) - 500) < Time.now
 		end
 

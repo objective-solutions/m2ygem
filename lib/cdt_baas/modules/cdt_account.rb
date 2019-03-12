@@ -55,7 +55,7 @@ module CdtBaas
 		end
 
 		def createCard(body)
-			response = @request.post(@url + ACCOUNT_PATH + body[:id].to_s + '/' + CARD_PATH + CdtHelper.conductorBodyToString(body), {})
+			response = @request.post(@url + ACCOUNT_PATH + body[:id].to_s + '/' + CARD_PATH + CdtHelper.conductorBodyToString(body), body, true)
 			person = CdtModel.new(response)
 			person
 		end
@@ -64,7 +64,15 @@ module CdtBaas
 			response = @request.post(@url + ACCOUNT_PATH + body[:id].to_s + '/' + VIRTUAL_CARD_PATH + CdtHelper.conductorBodyToString(body), {})
 			person = CdtModel.new(response)
 			person
-		end		
+		end	
+
+    	def createAccount(body)
+         	response = @request.post(@url + ACCOUNT_PATH + CdtHelper.conductorBodyToString(body), body, true)
+         	person = CdtModel.new(response)
+         	person
+     	end
+
+
 
 	end
 end

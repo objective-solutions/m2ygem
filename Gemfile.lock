@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cdt_baas (0.1.2)
+    cdt_baas (0.2.5)
       httparty
 
 GEM
@@ -25,4 +25,4 @@ DEPENDENCIES
   rake (~> 10.0)
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
