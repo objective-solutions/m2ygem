@@ -85,7 +85,7 @@ module CdtBaas
 	     end
 
 	     def registerPassword(id, body)
-	         response = @request.post(@url + CARD + id.to_s + '/' + REGISTER_PASSWORD + CdtHelper.conductorBodyToString(body), {}, [{:key => 'senha', :value => body[:password]}])
+	         response = @request.post(@url + CARD + id.to_s + '/' + REGISTER_PASSWORD + CdtHelper.conductorBodyToString(body), {}, [{:key => 'senha', :value => body[:password]}, {:key => 'Senha', :value => body[:password]}])
 	         person = CdtModel.new(response)
 	         person
 	     end

@@ -27,6 +27,13 @@ module CdtBaas
       if use_json
         @headers["Content-Type"] = 'application/json'
       end
+      if headers.length > 0
+        headers.each do |header|
+          @headers[header[:key]] = header[:value]
+        end
+      end
+
+      
       req = HTTParty.post(url,
                           body: body.to_json,
                           headers: @headers
