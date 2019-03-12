@@ -31,8 +31,7 @@ module CdtBaas
                           body: body.to_json,
                           headers: @headers
       )
-      req.parsed_response[:statusCode] = req.code
-      req.parsed_response
+      validResponse(req)
     end
 
     def get(url, headers = [])
@@ -44,7 +43,7 @@ module CdtBaas
       req = HTTParty.get(url,
                          headers: @headers
       )
-      req.parsed_response
+      validResponse(req)
     end
 
     def put(url, body = {}, headers = [])
@@ -58,18 +57,39 @@ module CdtBaas
                          headers: @headers,
                          body: body.to_json
       )
-      req.parsed_response[:statusCode] = req.code
-      req.parsed_response
+      validResponse(req)
     end
 
     def delete(url)
       req = HTTParty.delete(url,
                             headers: @headers
       )
-      req.parsed_response[:statusCode] = req.code
-      req.parsed_response
+      validResponse(req)
     end
 
+    def validJson?(json)
+        JSON.parse(json)
+        return true
+      rescue JSON::ParserError => e
+        return false
+    end
+
+    def validResponse(req)
+      p 'req'
+      p req
+      begin
+        response = req.parsed_response.to_s
+        p 'response'
+        p response
+        if validJson?(response)
+          req.parsed_response[:statusCode] = req.code
+          p 'req.parsed_response'
+          p req.parsed_response
+        end
+      rescue
+        {:message => "Erro interno Baas"}
+      end
+    end
 
   end
 
