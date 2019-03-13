@@ -17,6 +17,7 @@ module CdtBaas
 
   API = "api/"
   DETAILS = "details/"
+  RATE = "rate/"
   ACCOUNT = "account/"
   PEOPLE_PATH = "pessoas/"
   PEOPLE_DETAILS_PATH = "pessoas-detalhes/"
@@ -73,5 +74,6 @@ module CdtBaas
   UNASSIGN_PROFILE = "unassign-profile/"
   PRE_PAID = "lotes-cartoes-pre-pagos/"
   BILLET = "billet"
+  CARRIER_DETAILS = "/carrier-details"
 
 end
