@@ -102,7 +102,7 @@ module CdtBaas
         end
         respose
       rescue
-        {:message => "Erro interno Baas"}
+        {:message => "Erro interno Baas", :statusCode => 500}
       end
     end
 
