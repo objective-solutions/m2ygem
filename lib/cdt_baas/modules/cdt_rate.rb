@@ -7,7 +7,7 @@ module CdtBaas
 		end
 
 		def getCarrierDetails(body)
-			response = @request.get(@url + CARRIER + CARRIER_DETAILS + CdtHelper.conductorBodyToString(body))
+			response = @request.get(@url + CARRIER + RATE + CdtHelper.conductorBodyToString(body))
 			person = CdtModel.new(response)
 			person
 		end

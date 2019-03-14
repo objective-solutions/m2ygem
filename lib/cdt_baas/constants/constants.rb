@@ -75,5 +75,6 @@ module CdtBaas
   PRE_PAID = "lotes-cartoes-pre-pagos/"
   BILLET = "billet"
   CARRIER_DETAILS = "/carrier-details"
+  CARRIER = "carrier"
 
 end
