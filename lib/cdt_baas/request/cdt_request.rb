@@ -41,7 +41,9 @@ module CdtBaas
       # end
       if headers.length > 0
         headers.each do |header|
-          @headers[header[:key]] = header[:value]
+          if !header[:key].nil? && !header[:value].nil?
+            @headers[header[:key]] = header[:value]
+          end
         end
       end
 
@@ -57,7 +59,9 @@ module CdtBaas
     def get(url, headers = [])
       if headers.length > 0
         headers.each do |header|
-          @headers[header[:key]] = header[:value]
+          if !header[:key].nil? && !header[:value].nil?
+            @headers[header[:key]] = header[:value]
+          end
         end
       end
       req = HTTParty.get(url,
