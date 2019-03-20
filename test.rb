@@ -2,7 +2,7 @@ require "cdt_baas"
 
 
 puts "testando pessoas"
-a = CdtBaas::CdtPerson.new("s", "hmls")
+a = CdtBaas::CdtPerson.new("bTBrc2I1aTQ4bTRuNmFmYWVuaXQ0MGY4YjptbmFlcWZsb3JiN2NjY2JtaWYxaWwxa2U0YWdtNjIxa2w5dnM5cmdoZTRtb25ldGFlYms", "hmls")
 # person = a.createPerson({:nome => "Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 # person = a.updatePerson(3113,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 p a.getPeople({:id => 64})
@@ -60,13 +60,13 @@ puts "testando Boleto"
 #a.getPDF(1)
 
 puts "testando Cartões"
-a = CdtBaas::CdtCard.new("s", "hmsl")
+#a = CdtBaas::CdtCard.new("s", "hmsl")
 #a.findCard(30)
 #a.findCardData(30)
 #a.getCardLimit(30)
 #a.createDebitCard(0, {})
 #a.cancelCard(-1, {})
-p a.addHolder(1, {:id_pessoa => 14})
+#p a.addHolder(1, {:id_pessoa => 14})
 #a.updatePassword(-1, {:password => "1230"})
 #p a.getCards({})
 #a.findAccountCards({:idConta => 17})
