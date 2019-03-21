@@ -2,11 +2,11 @@ require "cdt_baas"
 
 
 puts "testando pessoas"
-a = CdtBaas::CdtPerson.new("bTBrc2I1aTQ4bTRuNmFmYWVuaXQ0MGY4YjptbmFlcWZsb3JiN2NjY2JtaWYxaWwxa2U0YWdtNjIxa2w5dnM5cmdoZTRtb25ldGFlYms", "hmls")
+#a = CdtBaas::CdtPerson.new("bTBrc2I1aTQ4bTRuNmFmYWVuaXQ0MGY4YjptbmFlcWZsb3JiN2NjY2JtaWYxaWwxa2U0YWdtNjIxa2w5dnM5cmdoZTRtb25ldGFlYms", "hmls")
 # person = a.createPerson({:nome => "Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 # person = a.updatePerson(3113,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
-p a.getPeople({:id => 64})
-p a.findPersonDetails(24)
+#p a.getPeople({:id => 64})
+#p a.findPersonDetails(24)
 # person = a.updatePersonDetails(3000,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 
 
@@ -18,7 +18,7 @@ puts "testando enderecos"
 
 
 puts "testando Contas"
-a = CdtBaas::CdtAccount.new("s", "s")
+#a = CdtBaas::CdtAccount.new("s", "s")
 #a.getUserAccounts({:idPessoa => 17})
 #a.getTimeline({:id => 30, :page => 0, :limit => 50})
 #p a.getTransactions({:id => 50})
@@ -26,20 +26,20 @@ a = CdtBaas::CdtAccount.new("s", "s")
 #CdtBaas::CdtRequest.setToken('aa')
 #a = CdtBaas::CdtInvoice.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.createInvoice({})
-p a.createAccount({
-    "idPessoa": 14,
-    "idOrigemComercial": 1,
-    "idProduto": 1,
-    "diaVencimento": 10,
-    "valorRenda": 0,
-    "valorPontuacao": 0,
-    "idEnderecoCorrespondencia": 4,
-    "limiteGlobal": 0,
-    "limiteMaximo": 0,
-    "limiteParcelas": 0,
-    "limiteConsignado": 0,
-    "flagFaturaPorEmail": 0
-})
+#p a.createAccount({
+#    "idPessoa": 14,
+#    "idOrigemComercial": 1,
+#    "idProduto": 1,
+#    "diaVencimento": 10,
+#    "valorRenda": 0,
+#    "valorPontuacao": 0,
+#    "idEnderecoCorrespondencia": 4,
+#    "limiteGlobal": 0,
+#    "limiteMaximo": 0,
+#    "limiteParcelas": 0,
+#    "limiteConsignado": 0,
+#    "flagFaturaPorEmail": 0
+#})
 
 
 puts "testando Serviço"
@@ -97,7 +97,7 @@ puts "testando Transport Cards"
 #a.newRecharge({})
 
 puts "testando Recargas"
-a = CdtBaas::CdtRecharge.new("s", "sshml")
+#a = CdtBaas::CdtRecharge.new("s", "sshml")
 #a.rechargeReport(3) # Parse Erro
 #a.newRechargeSolicitation({})
 #a.getRechargeSolicitation() # Parse Erro
@@ -106,16 +106,23 @@ a = CdtBaas::CdtRecharge.new("s", "sshml")
 #a.confirmRecharge(1, {})
 #a.consultRecharge()
 #a.adjustmentRecharge({})
-p a.getRecharges(26)
+#p a.getRecharges(26)
 
 puts "testando Billet"
-a = CdtBaas::CdtBillet.new("s", "hm")
+#a = CdtBaas::CdtBillet.new("s", "hm")
 #a.newRechargeSolicitation({})
-p a.generateTicket({:idConta => 50, :valor => 10.0, :tipoBoleto => 9, :dataVencimento => "2019-12-02"})
+#p a.generateTicket({:idConta => 50, :valor => 10.0, :tipoBoleto => 9, :dataVencimento => "2019-12-02"})
 
 puts "testando Telefone"
 #a = CdtBaas::CdtPhone.new("s", "hm")
 #a.getPhones({})
+
+puts "testando Rate"
+a = CdtBaas::CdtRate.new("NmYxbGI5cjFxN29yajJhdjU3MXFib2RpZXA6OWVtOXVqY2p0NXFsMGprcWk2N2IyZ2FqdnNzZWZxNjV2dXE5b3F1M2s3ZmhibWJ2NDNy", "hm")
+p a.getCarrierDetails({
+    "accountId": "16",
+    "operationType": 4
+})
 
 puts "testando Usuários"
 #a = CdtBaas::CdtUser.new("s", "hml")

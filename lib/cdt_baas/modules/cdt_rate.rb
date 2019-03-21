@@ -7,9 +7,8 @@ module CdtBaas
 		end
 
 		def getCarrierDetails(body)
-			response = @request.get(@url + CARRIER + RATE + CdtHelper.conductorBodyToString(body))
-			person = CdtModel.new(response)
-			person
+			response = @request.get(@url + RATE + CARRIER_DETAILS + CdtHelper.conductorBodyToString(body), [{:key => 'Content-Type', :value => 'application/json'}])
+			response
 		end
 
 		
