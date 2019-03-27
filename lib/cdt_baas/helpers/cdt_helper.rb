@@ -6,6 +6,10 @@ module CdtBaas
 		def self.homologation?(env)
 			env == HOMOLOGATION
 		end
+		
+		def self.productionBr?(env)
+			env == PRODUCTION_BR
+		end
 
 		def self.saveToken(basic,token)
 			if !token.nil?

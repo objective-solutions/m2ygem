@@ -3,14 +3,17 @@ module CdtBaas
   #envs
   HOMOLOGATION = "hml"
   PRODUCTION = "prd"
+  PRODUCTION_BR = "prdbr"
 
   #urls
   URL_HML = "https://api.hml.caradhras.io/"
   URL_PRD = "https://api.caradhras.io/"
+  URL_PRDBR = "https://api.prdbr.caradhras.io/"
 
   #auth_url
   TOKEN_HML = "https://auth.hml.caradhras.io/"
   TOKEN_PRD = "https://auth.caradhras.io/"
+  TOKEN_PRDBR = "https://auth.prdbr.caradhras.io"
 
   #paths
   TOKEN_PATH = "oauth2/token?grant_type=client_credentials"
