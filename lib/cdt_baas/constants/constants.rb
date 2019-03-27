@@ -13,7 +13,7 @@ module CdtBaas
   #auth_url
   TOKEN_HML = "https://auth.hml.caradhras.io/"
   TOKEN_PRD = "https://auth.caradhras.io/"
-  TOKEN_PRDBR = "https://auth.prdbr.caradhras.io"
+  TOKEN_PRDBR = "https://auth.prdbr.caradhras.io/"
 
   #paths
   TOKEN_PATH = "oauth2/token?grant_type=client_credentials"
