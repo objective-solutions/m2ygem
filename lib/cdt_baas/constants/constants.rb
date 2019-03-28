@@ -76,5 +76,6 @@ module CdtBaas
   BILLET = "billet"
   CARRIER_DETAILS = "/carrier-details"
   CARRIER = "carrier"
+  CEPS = "ceps"
 
 end

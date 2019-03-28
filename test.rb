@@ -118,11 +118,11 @@ puts "testando Telefone"
 #a.getPhones({})
 
 puts "testando Rate"
-a = CdtBaas::CdtRate.new("NmYxbGI5cjFxN29yajJhdjU3MXFib2RpZXA6OWVtOXVqY2p0NXFsMGprcWk2N2IyZ2FqdnNzZWZxNjV2dXE5b3F1M2s3ZmhibWJ2NDNy", "hm")
-p a.getCarrierDetails({
-    "accountId": "16",
-    "operationType": 4
-})
+#a = CdtBaas::CdtRate.new("NmYxbGI5cjFxN29yajJhdjU3MXFib2RpZXA6OWVtOXVqY2p0NXFsMGprcWk2N2IyZ2FqdnNzZWZxNjV2dXE5b3F1M2s3ZmhibWJ2NDNy", "hm")
+#p a.getCarrierDetails({
+#    "accountId": "16",
+#    "operationType": 4
+#})
 
 puts "testando Usuários"
 #a = CdtBaas::CdtUser.new("s", "hml")
@@ -131,3 +131,7 @@ puts "testando Usuários"
 #a.updateUser({})
 #a.findUser(101) # undefined method `each_pair' for #<String:0x00007fdb762296e8> (NoMethodError)
 #a.assignProfile(1, {})
+
+puts "testando CEPs"
+a = CdtBaas::CdtCep.new("bTBrc2I1aTQ4bTRuNmFmYWVuaXQ0MGY4YjptbmFlcWZsb3JiN2NjY2JtaWYxaWwxa2U0YWdtNjIxa2w5dnM5cmdoZTRtb25ldGFlYms", "prod")
+p a.ceps({:CEP => '01323050'})
