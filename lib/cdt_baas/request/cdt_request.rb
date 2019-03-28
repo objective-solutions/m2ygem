@@ -47,7 +47,7 @@ module CdtBaas
         end
       end
 
-
+      puts url.to_s
       req = HTTParty.post(url,
                           body: body.to_json,
                           headers: @headers
@@ -64,6 +64,7 @@ module CdtBaas
           end
         end
       end
+      puts url.to_s
       req = HTTParty.get(url,
                          headers: @headers
       )
@@ -99,6 +100,11 @@ module CdtBaas
     end
 
     def validResponse(req)
+      begin
+        puts req.to_s
+      rescue
+      end
+      
       begin
         respose = req.parsed_response
         if respose.kind_of?(Hash)

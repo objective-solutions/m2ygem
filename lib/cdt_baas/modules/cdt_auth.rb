@@ -6,6 +6,7 @@ module CdtBaas
         @request = CdtRequest.new("Basic #{token}", token)
         @basic = token
         @url = CdtHelper.homologation?(env) ? TOKEN_HML : TOKEN_PRD
+        @url = CdtHelper.productionBr?(env) ? TOKEN_PRDBR : @url
       end
 
       def generateToken
