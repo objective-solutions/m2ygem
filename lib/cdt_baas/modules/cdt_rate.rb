@@ -11,6 +11,10 @@ module CdtBaas
 			response
 		end
 
+		def waived(body)
+			response = @request.post(@url + WAIVED, body, true)
+			response
+		end
 		
 	end
 end

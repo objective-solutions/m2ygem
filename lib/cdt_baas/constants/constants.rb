@@ -80,5 +80,6 @@ module CdtBaas
   CARRIER_DETAILS = "/carrier-details"
   CARRIER = "carrier"
   CEPS = "ceps"
-
+  WAIVED = "rate/waived"
+  
 end
