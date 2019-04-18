@@ -110,6 +110,12 @@ module CdtBaas
         if respose.kind_of?(Hash)
           respose[:statusCode] = req.code
         end
+        if respose.kind_of?(String)
+          resposeJson = {}
+          resposeJson[:message] = respose
+          resposeJson[:statusCode] = req.code
+          respose = resposeJson
+        end
         respose
       rescue
         {:message => "Erro interno Baas", :statusCode => 500}
