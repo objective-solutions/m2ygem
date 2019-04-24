@@ -56,7 +56,7 @@ module CdtBaas
     end
 
 
-    def get(url, headers = [])
+    def get(url, headers = [], skipValidation = false)
       if headers.length > 0
         headers.each do |header|
           if !header[:key].nil? && !header[:value].nil?
@@ -68,7 +68,11 @@ module CdtBaas
       req = HTTParty.get(url,
                          headers: @headers
       )
-      validResponse(req)
+      if skipValidation
+        req.parsed_response
+      else
+        validResponse(req)
+      end
     end
 
     def put(url, body = {}, headers = [])
