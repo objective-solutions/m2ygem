@@ -31,7 +31,7 @@ module CdtBaas
 		end
 
 		def getPDF(id)
-			response = @request.get(@url + BANK_SLIP + id.to_s + '/' + PDF, true)
+			response = @request.get(@url + BANK_SLIP + id.to_s + '/' + PDF, [], true)
 			response
 		end
 
