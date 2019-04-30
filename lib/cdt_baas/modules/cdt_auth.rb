@@ -10,6 +10,7 @@ module CdtBaas
       end
 
       def generateToken
+        puts @url
         if @url.include?(TOKEN_ONLYPAY)
           response = @request.post(@url + TOKEN_PATH, {:username => ONLYPAY_USER, :password => ONLYPAY_PASSWORD})
           puts response.to_s
