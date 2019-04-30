@@ -6,11 +6,15 @@ module CdtBaas
         @request = CdtRequest.new("Basic #{token}", token)
         @basic = token
         @url = CdtHelper.homologation?(env) ? TOKEN_HML : TOKEN_PRD
-        @url = CdtHelper.productionBr?(env) ? TOKEN_PRDBR : @url
+        @url = CdtHelper.productionBr?(env) ? TOKEN_ONLYPAY : @url
       end
 
       def generateToken
-      	response = @request.post(@url + TOKEN_PATH, {})
+        if @url.include?(TOKEN_ONLYPAY)
+          @request.post(@url + TOKEN_PATH, {:username => ONLYPAY_USER, :password => ONLYPAY_PASSWORD})
+        else
+      	 response = @request.post(@url + TOKEN_PATH, {})
+        end
         token = CdtModel.new(response)
         CdtBaas::CdtRequest.setToken(token)
         CdtHelper.saveToken(@basic, token.access_token)

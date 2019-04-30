@@ -3,20 +3,24 @@ module CdtBaas
   #envs
   HOMOLOGATION = "hml"
   PRODUCTION = "prd"
-  PRODUCTION_BR = "prdbr"
+  ONLYPAY = "prdbr"
 
   #urls
   URL_HML = "https://api.hml.caradhras.io/"
   URL_PRD = "https://api.caradhras.io/"
-  URL_PRDBR = "https://api.prdbr.caradhras.io/"
+  URL_ONLYPAY = "https://api.caradhras.io/"
 
   #auth_url
   TOKEN_HML = "https://auth.hml.caradhras.io/"
   TOKEN_PRD = "https://auth.caradhras.io/"
-  TOKEN_PRDBR = "https://auth.prdbr.caradhras.io/"
+  TOKEN_ONLYPAY = "https://devhost.onlypay.com.br/safebox-api/auth/token"
 
   #paths
   TOKEN_PATH = "oauth2/token?grant_type=client_credentials"
+
+  ONLYPAY_USER = "onlypay@mobile2y"
+  ONLYPAY_PASSWORD = "Hyq5c5dYRysQTdK"
+
 
   API = "api/"
   DETAILS = "details/"

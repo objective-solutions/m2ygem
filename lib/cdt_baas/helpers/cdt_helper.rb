@@ -8,7 +8,7 @@ module CdtBaas
 		end
 		
 		def self.productionBr?(env)
-			env == PRODUCTION_BR
+			env == ONLYPAY
 		end
 
 		def self.saveToken(basic,token)
