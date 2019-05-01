@@ -12,7 +12,7 @@ module CdtBaas
       def generateToken
         puts @url
         if @url.include?(TOKEN_ONLYPAY)
-          response = @request.postWithHeader(@url, {:username => ONLYPAY_USER, :password => ONLYPAY_PASSWORD}, {"Content-Type": "application/json"})
+          response = @request.postWithHeader(@url, {:username => ONLYPAY_USER, :password => ONLYPAY_PASSWORD}, [{:key => 'Content-Type', :value => "application/json"}])
           puts response.to_s
           puts response.to_s
         else
