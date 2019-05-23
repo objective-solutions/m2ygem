@@ -18,11 +18,11 @@ puts "testando enderecos"
 
 
 puts "testando Contas"
-#a = CdtBaas::CdtAccount.new("s", "s")
+a = CdtBaas::CdtAccount.new("NWRmNXZxNDVqOGhxNjhlOW5obDVuMmJhNTM6NWRhY2dscnEwMmY1Y2lvaGpvdjIzNmdnb25hZXA0ZGFudHVsMzI4c2E1OGZwMnRnNWk0", "prod")
 #a.getUserAccounts({:idPessoa => 17})
 #a.getTimeline({:id => 30, :page => 0, :limit => 50})
 #p a.getTransactions({:id => 50})
-#puts a.getUserAccounts({:cpf => "60301076820"})
+puts a.getUserAccounts({:cpf => "31426669828"})
 #CdtBaas::CdtRequest.setToken('aa')
 #a = CdtBaas::CdtInvoice.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
 #a.createInvoice({})
