@@ -6,20 +6,20 @@ module CdtBaas
 			startModule(token, env)
 		end
 
-		def transportCards(body)
-			response = @request.get(@url + TRANSPORT_CARDS + CdtHelper.conductorBodyToString(body))
+		def transportCards(number)
+			response = @request.get(@url + TRANSPORT_CARDS + number.to_s)
 			person = CdtModel.new(response)
 			person
 		end
 
 		def getTransportCards(body)
-			response = @request.get(@url + TRANSPORT_CARDS_RECHARGE + CdtHelper.conductorBodyToString(body))
+			response = @request.get(@url + TRANSPORT_CARDS_RECHARGE + CdtHelper.conductorBodyToString(body), {}, false)
 			person = CdtModel.new(response)
 			person
 		end
 
 		def newRecharge(body)
-			response = @request.post(@url + TRANSPORT_CARDS_RECHARGE + CdtHelper.conductorBodyToString(body), {}, false)
+			response = @request.post(@url + TRANSPORT_CARDS_RECHARGE + CdtHelper.conductorBodyToString(body), {}, true)
 			person = CdtModel.new(response)
 			person
 		end
