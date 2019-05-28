@@ -18,10 +18,10 @@ puts "testando enderecos"
 
 
 puts "testando Contas"
-#a = CdtBaas::CdtAccount.new(".==", "hml")
-#a.getUserAccounts({:idPessoa => 17})
-#a.getTimeline({:id => 30, :page => 0, :limit => 50})
-#p a.getTransactions({:id => 14, :page => 0})
+a = CdtBaas::CdtAccount.new("MWk5bWh2dmdtcmRidmdtODFwdGx1Z2IxbGo6Yjdya250aGM3M2sxZ2M4ZnY2Z2Vva2NsNzhiNW5hOXFzbTZyOGVlbG52NTFxZmhlNG05", "prod")
+p a.getUserAccounts({:idPessoa => 17})
+p a.getTimeline({:id => 30, :page => 0, :limit => 50})
+p a.getTransactions({:id => 14, :page => 0})
 #puts a.getUserAccounts({:cpf => "31426669828"})
 #CdtBaas::CdtRequest.setToken('aa')
 #a = CdtBaas::CdtInvoice.new(".", ".", "hml")
@@ -60,7 +60,7 @@ puts "testando Boleto"
 #a.getPDF(1)
 
 puts "testando Cartões"
-a = CdtBaas::CdtCard.new("s", "prod")
+a = CdtBaas::CdtCard.new("MWk5bWh2dmdtcmRidmdtODFwdGx1Z2IxbGo6Yjdya250aGM3M2sxZ2M4ZnY2Z2Vva2NsNzhiNW5hOXFzbTZyOGVlbG52NTFxZmhlNG05", "prod")
 p a.getLotes({:identificadorExterno => 12})
 #a.findCardData(30)
 #a.getCardLimit(30)
