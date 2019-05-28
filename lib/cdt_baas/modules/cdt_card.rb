@@ -113,6 +113,13 @@ module CdtBaas
 	         person = CdtModel.new(response)
 	         person
 	     end
+
+	     def getLotes(body)
+	         response = @request.get(@url + CARD + PRE_PAID + CdtHelper.conductorBodyToString(body))
+	         person = CdtModel.new(response)
+	         person
+	     end
+
  	end
 
 end

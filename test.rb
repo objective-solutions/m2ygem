@@ -2,11 +2,11 @@ require "cdt_baas"
 
 
 puts "testando pessoas"
-#a = CdtBaas::CdtPerson.new("bTBrc2I1aTQ4bTRuNmFmYWVuaXQ0MGY4YjptbmFlcWZsb3JiN2NjY2JtaWYxaWwxa2U0YWdtNjIxa2w5dnM5cmdoZTRtb25ldGFlYms", "hmls")
+#a = CdtBaas::CdtPerson.new(".====", "hml")
 # person = a.createPerson({:nome => "Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 # person = a.updatePerson(3113,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
-#p a.getPeople({:id => 64})
-#p a.findPersonDetails(24)
+#p a.getPeople({:id => 71})
+#p a.findPersonDetails(71)
 # person = a.updatePersonDetails(3000,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 
 
@@ -18,13 +18,13 @@ puts "testando enderecos"
 
 
 puts "testando Contas"
-a = CdtBaas::CdtAccount.new("NWRmNXZxNDVqOGhxNjhlOW5obDVuMmJhNTM6NWRhY2dscnEwMmY1Y2lvaGpvdjIzNmdnb25hZXA0ZGFudHVsMzI4c2E1OGZwMnRnNWk0", "prod")
+#a = CdtBaas::CdtAccount.new(".==", "hml")
 #a.getUserAccounts({:idPessoa => 17})
 #a.getTimeline({:id => 30, :page => 0, :limit => 50})
-#p a.getTransactions({:id => 50})
-puts a.getUserAccounts({:cpf => "31426669828"})
+#p a.getTransactions({:id => 14, :page => 0})
+#puts a.getUserAccounts({:cpf => "31426669828"})
 #CdtBaas::CdtRequest.setToken('aa')
-#a = CdtBaas::CdtInvoice.new("4pqd3c8j3gqsikcea8ltlbdccb", "1vdgm16i4695orvhbkouom1k8jr2jlgdvuqgdpiro0hoc7ebsjc3", "hml")
+#a = CdtBaas::CdtInvoice.new(".", ".", "hml")
 #a.createInvoice({})
 #p a.createAccount({
 #    "idPessoa": 14,
@@ -60,15 +60,15 @@ puts "testando Boleto"
 #a.getPDF(1)
 
 puts "testando Cartões"
-#a = CdtBaas::CdtCard.new("s", "hmsl")
-#a.findCard(30)
+a = CdtBaas::CdtCard.new("s", "prod")
+p a.getLotes({:identificadorExterno => 12})
 #a.findCardData(30)
 #a.getCardLimit(30)
 #a.createDebitCard(0, {})
 #a.cancelCard(-1, {})
 #p a.addHolder(1, {:id_pessoa => 14})
 #a.updatePassword(-1, {:password => "1230"})
-#p a.getCards({})
+#p a.getCards({:idConta => 14})
 #a.findAccountCards({:idConta => 17})
 #a.passwordValidation(26, {:password => "2809"})
 
@@ -91,10 +91,16 @@ puts "testando Tranferência bancaria"
 #a.getBankTransfers(23)
 
 puts "testando Transport Cards"
-#a = CdtBaas::CdtTransportCard.new("s", "hml")
-#a.transportCards({}) # Parse Erro
-#a.getTransportCards({}) # Parse Erro
-#a.newRecharge({})
+#a = CdtBaas::CdtTransportCard.new(".", "prod")
+#p a.transportCards(479566800)
+#p a.newRecharge({
+#  "accountId":16,	
+#  "cardNumber":1,
+#  "creditType": 1,
+#  "productCode": 691,
+#  "value": 0,
+#  "amount": 0
+#})
 
 puts "testando Recargas"
 #a = CdtBaas::CdtRecharge.new("s", "sshml")
@@ -118,7 +124,7 @@ puts "testando Telefone"
 #a.getPhones({})
 
 puts "testando Rate"
-#a = CdtBaas::CdtRate.new("NmYxbGI5cjFxN29yajJhdjU3MXFib2RpZXA6OWVtOXVqY2p0NXFsMGprcWk2N2IyZ2FqdnNzZWZxNjV2dXE5b3F1M2s3ZmhibWJ2NDNy", "hm")
+#a = CdtBaas::CdtRate.new(".", "hm")
 #p a.getCarrierDetails({
 #    "accountId": "16",
 #    "operationType": 4
@@ -133,5 +139,5 @@ puts "testando Usuários"
 #a.assignProfile(1, {})
 
 puts "testando CEPs"
-a = CdtBaas::CdtCep.new("bTBrc2I1aTQ4bTRuNmFmYWVuaXQ0MGY4YjptbmFlcWZsb3JiN2NjY2JtaWYxaWwxa2U0YWdtNjIxa2w5dnM5cmdoZTRtb25ldGFlYms", "prod")
-p a.ceps({:CEP => '01323050'})
+#a = CdtBaas::CdtCep.new(".", "prod")
+#p a.ceps({:CEP => '01323050'})
