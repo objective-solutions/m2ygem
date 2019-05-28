@@ -32,7 +32,7 @@ module CdtBaas
 
 	     def updateAddress(id, body)
 	         # response = @request.get(@url + ADDRESSES_PATH + id.to_s + "/" + CdtHelper.conductorBodyToString(body))
-	         response = @request.get(@url + ADDRESSES_PATH + CdtHelper.conductorBodyToString(body))
+	         response = @request.put(@url + ADDRESSES_PATH + CdtHelper.conductorBodyToString(body))
 	         person = CdtModel.new(response)
 	         person
 	     end
