@@ -2,10 +2,10 @@ require "cdt_baas"
 
 
 puts "testando pessoas"
-#a = CdtBaas::CdtPerson.new(".====", "hml")
+#a = CdtBaas::CdtPerson.new(".", "prod")
 # person = a.createPerson({:nome => "Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 # person = a.updatePerson(3113,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
-#p a.getPeople({:id => 71})
+#p a.getPeople({:cpf => "00235967750"})
 #p a.findPersonDetails(71)
 # person = a.updatePersonDetails(3000,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 
@@ -18,11 +18,11 @@ puts "testando enderecos"
 
 
 puts "testando Contas"
-a = CdtBaas::CdtAccount.new("MWk5bWh2dmdtcmRidmdtODFwdGx1Z2IxbGo6Yjdya250aGM3M2sxZ2M4ZnY2Z2Vva2NsNzhiNW5hOXFzbTZyOGVlbG52NTFxZmhlNG05", "prod")
-p a.getUserAccounts({:idPessoa => 17})
-p a.getTimeline({:id => 30, :page => 0, :limit => 50})
-p a.getTransactions({:id => 14, :page => 0})
-#puts a.getUserAccounts({:cpf => "31426669828"})
+#a = CdtBaas::CdtAccount.new(".", "prod")
+#p a.getUserAccounts({:idPessoa => 858})
+#p a.getTimeline({:id => 30, :page => 0, :limit => 50})
+#p a.getTransactions({:id => 14, :page => 0})
+#puts a.getUserAccounts({:cpf => "00235967750"})
 #CdtBaas::CdtRequest.setToken('aa')
 #a = CdtBaas::CdtInvoice.new(".", ".", "hml")
 #a.createInvoice({})
@@ -60,9 +60,9 @@ puts "testando Boleto"
 #a.getPDF(1)
 
 puts "testando Cartões"
-a = CdtBaas::CdtCard.new("MWk5bWh2dmdtcmRidmdtODFwdGx1Z2IxbGo6Yjdya250aGM3M2sxZ2M4ZnY2Z2Vva2NsNzhiNW5hOXFzbTZyOGVlbG52NTFxZmhlNG05", "prod")
-p a.getLotes({:identificadorExterno => 12})
-#a.findCardData(30)
+#a = CdtBaas::CdtCard.new(".", "prod")
+#p a.getLotes({:identificadorExterno => 12})
+#p a.findCardData(30)
 #a.getCardLimit(30)
 #a.createDebitCard(0, {})
 #a.cancelCard(-1, {})
@@ -91,16 +91,16 @@ puts "testando Tranferência bancaria"
 #a.getBankTransfers(23)
 
 puts "testando Transport Cards"
-#a = CdtBaas::CdtTransportCard.new(".", "prod")
+a = CdtBaas::CdtTransportCard.new(".", "prod")
 #p a.transportCards(479566800)
-#p a.newRecharge({
-#  "accountId":16,	
-#  "cardNumber":1,
-#  "creditType": 1,
-#  "productCode": 691,
-#  "value": 0,
-#  "amount": 0
-#})
+p a.newRecharge({
+  "accountId":4581,	
+  "cardNumber":479566800,
+  "creditType": 1,
+  "productCode": 691,
+  "value": 0.02,
+  "amount": 0
+})
 
 puts "testando Recargas"
 #a = CdtBaas::CdtRecharge.new("s", "sshml")
@@ -124,9 +124,9 @@ puts "testando Telefone"
 #a.getPhones({})
 
 puts "testando Rate"
-#a = CdtBaas::CdtRate.new(".", "hm")
+#a = CdtBaas::CdtRate.new(".==", "hml")
 #p a.getCarrierDetails({
-#    "accountId": "16",
+#    "accountId": "1",
 #    "operationType": 4
 #})
 

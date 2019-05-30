@@ -19,7 +19,7 @@ module CdtBaas
 		end
 
 		def newRecharge(body)
-			response = @request.post(@url + TRANSPORT_CARDS_RECHARGE + CdtHelper.conductorBodyToString(body), {}, true)
+			response = @request.post(@url + TRANSPORT_CARDS_RECHARGE, body, true)
 			person = CdtModel.new(response)
 			person
 		end
