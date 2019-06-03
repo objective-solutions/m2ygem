@@ -72,6 +72,20 @@ module CdtBaas
          	person
      	end
 
+	     def updateDetails(id, body)
+	         response = @request.put(@url + ACCOUNT_PATH + id.to_s + "/adicionais" + CdtHelper.conductorBodyToString(body))
+	         # response = @request.put(@url + ACCOUNT_PATH + CdtHelper.conductorBodyToString(body))
+	         person = CdtModel.new(response)
+	         person
+	     end
+
+	     def createDetails(id, body)
+	         response = @request.post(@url + ACCOUNT_PATH + id.to_s + "/adicionais" + CdtHelper.conductorBodyToString(body), {}))
+	         # response = @request.put(@url + ACCOUNT_PATH + CdtHelper.conductorBodyToString(body))
+	         person = CdtModel.new(response)
+	         person
+	     end
+
 
 
 	end
