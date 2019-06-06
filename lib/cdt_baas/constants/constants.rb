@@ -40,7 +40,7 @@ module CdtBaas
   TRANSACTIONS_PATH = "transacoes/"
   ACTIVE_PATH = "reativar/"
   BLOCKED_PATH = "bloquear/"
-  CANCEL_PATH = "Cancelar/"
+  CANCEL_PATH = "cancelar/"
   CARD_PATH = "gerar-cartao-grafica/"
   VIRTUAL_CARD_PATH = "gerar-cartao-virtual/"
   BANK_SLIP_PATH = "gerar-boleto-recarga/"
