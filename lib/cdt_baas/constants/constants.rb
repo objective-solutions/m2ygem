@@ -70,6 +70,7 @@ module CdtBaas
   BANk_TRANSFER_ADJUST = "banktransfers/adjustment/" 
   TRANSPORT_CARDS = "transportcards/card/"
   TRANSPORT_CARDS_RECHARGE = "transportcards/recharge/"
+  TRANSPORT_CARDS_ACCOUNT = "transportcards/account/"
   RECHARGES = "recharges/"
   DEALERS = "dealers/"
   CONFIRM = "confirm/"

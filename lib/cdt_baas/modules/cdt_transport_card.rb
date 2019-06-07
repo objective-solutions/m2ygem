@@ -24,5 +24,10 @@ module CdtBaas
 			person
 		end
 
+		def getRecharges(number)
+			response = @request.get(@url + TRANSPORT_CARDS_ACCOUNT + number.to_s, [{:key => 'Content-Type', :value => "application/json"}], false)
+			response
+		end
+
 	end
 end
