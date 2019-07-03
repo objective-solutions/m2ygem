@@ -106,6 +106,7 @@ module CdtBaas
     def validResponse(req)
       begin
         puts req.to_s
+        ApiController.saveCdtErroLog('Conductor', req.parsed_response, req.code, req.request.last_uri.to_s)
       rescue
       end
       
