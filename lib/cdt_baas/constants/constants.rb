@@ -86,5 +86,8 @@ module CdtBaas
   CARRIER = "carrier"
   CEPS = "ceps"
   WAIVED = "rate/waived"
-  
+  KYC = "knowyourclient/people/"
+  INDIVIDUALS = "individuals/"
+  INDIVIDUALS_ACCOUNTS = "individuals/accounts/"
+
 end

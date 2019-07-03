@@ -91,16 +91,16 @@ puts "testando Tranferência bancaria"
 #a.getBankTransfers(23)
 
 puts "testando Transport Cards"
-a = CdtBaas::CdtTransportCard.new(".", "prod")
-#p a.transportCards(479566800)
-p a.newRecharge({
-  "accountId":4581,	
-  "cardNumber":479566800,
-  "creditType": 1,
-  "productCode": 691,
-  "value": 0.02,
-  "amount": 0
-})
+# a = CdtBaas::CdtTransportCard.new(".", "prod")
+# #p a.transportCards(479566800)
+# p a.newRecharge({
+#   "accountId":4581,	
+#   "cardNumber":479566800,
+#   "creditType": 1,
+#   "productCode": 691,
+#   "value": 0.02,
+#   "amount": 0
+# })
 
 puts "testando Recargas"
 #a = CdtBaas::CdtRecharge.new("s", "sshml")
