@@ -2,27 +2,30 @@ require "cdt_baas"
 
 
 puts "testando pessoas"
-#a = CdtBaas::CdtPerson.new(".", "prod")
+#a = CdtBaas::CdtPerson.new("==", "prod")
 # person = a.createPerson({:nome => "Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 # person = a.updatePerson(3113,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
-#p a.getPeople({:cpf => "00235967750"})
+#p a.getPeople({:cpf => "44548853898"})
+
 #p a.findPersonDetails(71)
 # person = a.updatePersonDetails(3000,{:nome => "1Caio Teste", :tipo => "PF", :sexo => "M", :cpf => "37856994843", :dataNascimento => "1990-01-18"})
 
 
 puts "testando enderecos"
-#a = CdtBaas::CdtAddress.new("s", "hml")
+# a = CdtBaas::CdtAddress.new("", "prod")
 # zip = a.checkZip({:CEP => "01410000"})
-# a.getAddresses({:idPessoa => 300})
+# p a.getAddresses({:idPessoa => 3493})
+#a.updateAddress(421, {})
 # a.findAddress(287)
 
 
 puts "testando Contas"
-#a = CdtBaas::CdtAccount.new(".", "prod")
-#p a.getUserAccounts({:idPessoa => 858})
+#a = CdtBaas::CdtAccount.new("==", "prod")
+#p a.getUserAccounts({:idPessoa => 3342})
+#p a.getAccounts('3342')
 #p a.getTimeline({:id => 30, :page => 0, :limit => 50})
 #p a.getTransactions({:id => 14, :page => 0})
-#puts a.getUserAccounts({:cpf => "00235967750"})
+# puts a.getUserAccounts({:cpf => "85909784510"})
 #CdtBaas::CdtRequest.setToken('aa')
 #a = CdtBaas::CdtInvoice.new(".", ".", "hml")
 #a.createInvoice({})
@@ -60,7 +63,7 @@ puts "testando Boleto"
 #a.getPDF(1)
 
 puts "testando Cartões"
-#a = CdtBaas::CdtCard.new(".", "prod")
+# a = CdtBaas::CdtCard.new("", "prod")
 #p a.getLotes({:identificadorExterno => 12})
 #p a.findCardData(30)
 #a.getCardLimit(30)
@@ -68,8 +71,8 @@ puts "testando Cartões"
 #a.cancelCard(-1, {})
 #p a.addHolder(1, {:id_pessoa => 14})
 #a.updatePassword(-1, {:password => "1230"})
-#p a.getCards({:idConta => 14})
-#a.findAccountCards({:idConta => 17})
+# p a.getCards({:idConta => 7098})
+# p a.findAccountCards({:idConta => 7098})
 #a.passwordValidation(26, {:password => "2809"})
 
 puts "testando Clientes"
@@ -120,8 +123,8 @@ puts "testando Billet"
 #p a.generateTicket({:idConta => 50, :valor => 10.0, :tipoBoleto => 9, :dataVencimento => "2019-12-02"})
 
 puts "testando Telefone"
-#a = CdtBaas::CdtPhone.new("s", "hm")
-#a.getPhones({})
+# a = CdtBaas::CdtPhone.new("", "prod")
+# a.getPhones({:idPessoa => 3582})
 
 puts "testando Rate"
 #a = CdtBaas::CdtRate.new(".==", "hml")
@@ -141,3 +144,21 @@ puts "testando Usuários"
 puts "testando CEPs"
 #a = CdtBaas::CdtCep.new(".", "prod")
 #p a.ceps({:CEP => '01323050'})
+
+puts "testando individuals"
+a = CdtBaas::CdtIndividual.new("", "prod")
+p 'a.createAccount({})'
+p a.createAccount({:name => 'teste'})
+p 'a.createPerson({})'
+p a.createPerson({})
+p 'a.findPerson({})'
+p a.findPerson(1)
+p 'a.getPersons({})'
+p a.getPersons({})
+p 'a.updatePerson({})'
+p a.updatePerson(0, {})
+
+
+
+
+

@@ -8,31 +8,31 @@ module CdtBaas
         end
 
         def createAccount(body)
-            response = @request.post(@url + INDIVIDUALS_ACCOUNTS + CdtHelper.conductorBodyToString(body), {})
+            response = @request.post(@url + "v2/" + INDIVIDUALS_ACCOUNTS, body, true)
             person = CdtModel.new(response)
             person
         end
 
         def createPerson(body)
-            response = @request.post(@url + INDIVIDUALS + CdtHelper.conductorBodyToString(body), {})
+            response = @request.post(@url + "v2/" + INDIVIDUALS, body, true)
             person = CdtModel.new(response)
             person
         end
 
         def findPerson(id)
-            response = @request.get(@url + INDIVIDUALS + id.to_s)
+            response = @request.get(@url + "v2/" + INDIVIDUALS + id.to_s)
             person = CdtModel.new(response)
             person
         end
 
         def getPersons(body)
-            response = @request.get(@url + INDIVIDUALS + + CdtHelper.conductorBodyToString(body))
+            response = @request.get(@url + "v2/" + INDIVIDUALS + CdtHelper.conductorBodyToString(body))
             person = CdtModel.new(response)
             person
         end
 
         def updatePerson(id, body)
-            response = @request.put(@url + INDIVIDUALS + id.to_s + "/" + CdtHelper.conductorBodyToString(body))
+            response = @request.put(@url + "v2/" + INDIVIDUALS + id.to_s , body, [{:key => 'Content-Type', :value => "application/json"}])
             person = CdtModel.new(response)
             person
         end
