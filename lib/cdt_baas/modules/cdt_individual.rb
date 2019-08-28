@@ -8,13 +8,13 @@ module CdtBaas
         end
 
         def createAccount(body)
-            response = @request.post(@url + "v2/" + INDIVIDUALS_ACCOUNTS, body, true)
+            response = @request.post(@url + "v2/" + INDIVIDUALS_ACCOUNTS, body, [{:key => 'Content-Type', :value => "application/json"}])
             person = CdtModel.new(response)
             person
         end
 
         def createPerson(body)
-            response = @request.post(@url + "v2/" + INDIVIDUALS, body, true)
+            response = @request.post(@url + "v2/" + INDIVIDUALS, body, [{:key => 'Content-Type', :value => "application/json"}])
             person = CdtModel.new(response)
             person
         end
