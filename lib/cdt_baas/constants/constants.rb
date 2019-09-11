@@ -89,5 +89,6 @@ module CdtBaas
   KYC = "knowyourclient/people/"
   INDIVIDUALS = "individuals/"
   INDIVIDUALS_ACCOUNTS = "individuals/accounts/"
+  RECEIPTS = "receipts/"
 
 end

@@ -6,27 +6,52 @@ module CdtBaas
 			startModule(token, env)
 		end
 
-		def payment(body)
-			response = @request.post(@url + PAYMENT, body, true)
+		def payment(body, version = 0)
+
+			if version != 0
+				url = @url.gsub("api", "payments") + 'v' + version.to_s + '/'
+			else
+				url = @url + PAYMENT
+			end
+
+			response = @request.post(url, body, true)
 			payment = CdtModel.new(response)
 			generateResponse(payment)
 		end
 
-		def paymentValidate(barCode)
-			response = @request.get(@url + PAYMENT_VALIDATE + barCode)
+		def paymentValidate(barCode, version = 0)
+
+			if version != 0
+				url = @url.gsub("api", "payments") + 'v' + version.to_s + '/' + PAYMENT_VALIDATE + barCode
+			else
+				url = @url + PAYMENT_VALIDATE + barCode
+			end
+
+			response = @request.get(url)
 			payment = CdtModel.new(response)
 			generateResponse(payment)
 		end
 
 		def getPayment(id)
+
 			response = @request.get(@url + PAYMENT + ACCOUNT + id.to_s)
 			payment = response
 			generateResponse(payment)
 		end
 
 		def paymentAdjustment(idAdjustment)
+
 			response = @request.get(@url + PAYMENT_ADJUSTMENT + idAdjustment)
 			payment = CdtModel.new(response)
+			generateResponse(payment)
+		end
+
+		def getReceipts(id, version = 1)
+
+			url = @url.gsub("api", "payments") + 'v' + version.to_s + '/'
+
+			response = @request.get(url + RECEIPTS)
+			payment = response
 			generateResponse(payment)
 		end
 
