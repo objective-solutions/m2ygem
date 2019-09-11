@@ -48,6 +48,7 @@ module CdtBaas
   V1_PAYMENT = "v1/payments"
   PAYMENT = "payments/"
   PAYMENT_VALIDATE = "payments/validate/"
+  VALIDATE = "validate/"
   PAYMENT_ADJUSTMENT = "payments/adjustment/"
   BANK_SLIP = "boletos/"
   CARD = "cartoes/"
