@@ -22,7 +22,7 @@ module CdtBaas
 		def paymentValidate(barCode, version = 0)
 
 			if version != 0
-				url = @url.gsub("api", "payments") + 'v' + version.to_s + '/' + PAYMENT_VALIDATE + barCode
+				url = @url.gsub("api", "payments") + 'v' + version.to_s + '/' + barCode
 			else
 				url = @url + PAYMENT_VALIDATE + barCode
 			end
