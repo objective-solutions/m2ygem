@@ -51,7 +51,8 @@ puts "testando Serviço"
 #puts a.findp2pTransfer({:id => 56780})
 
 puts "testando Payment"
-# a = CdtBaas::CdtPayment.new("s", "hml")
+a = CdtBaas::CdtPayment.new("", "prod")
+p a.getReceipts({:idAccount => 10788}, 1)
 # res = a.paymentAdjustment("123")
 # p a.getPayment(26)
 
@@ -146,17 +147,17 @@ puts "testando CEPs"
 #p a.ceps({:CEP => '01323050'})
 
 puts "testando individuals"
-a = CdtBaas::CdtIndividual.new("", "prod")
-p 'a.createAccount({})'
-p a.createAccount({:name => 'teste'})
-p 'a.createPerson({})'
-p a.createPerson({})
-p 'a.findPerson({})'
-p a.findPerson(1)
-p 'a.getPersons({})'
-p a.getPersons({})
-p 'a.updatePerson({})'
-p a.updatePerson(0, {})
+# a = CdtBaas::CdtIndividual.new("", "prod")
+# p 'a.createAccount({})'
+# p a.createAccount({:name => 'teste'})
+# p 'a.createPerson({})'
+# p a.createPerson({})
+# p 'a.findPerson({})'
+# p a.findPerson(1)
+# p 'a.getPersons({})'
+# p a.getPersons({})
+# p 'a.updatePerson({})'
+# p a.updatePerson(0, {})
 
 
 

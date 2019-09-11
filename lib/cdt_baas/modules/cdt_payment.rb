@@ -41,16 +41,16 @@ module CdtBaas
 
 		def paymentAdjustment(idAdjustment)
 
-			response = @request.get(@url + PAYMENT_ADJUSTMENT + idAdjustment)
+			response = @request.get(@url + PAYMENT_ADJUSTMENT + idAdjustment.to_s)
 			payment = CdtModel.new(response)
 			generateResponse(payment)
 		end
 
-		def getReceipts(id, version = 1)
+		def getReceipts(body, version = 1)
 
 			url = @url.gsub("api", "payments") + 'v' + version.to_s + '/'
 
-			response = @request.get(url + RECEIPTS)
+			response = @request.get(url + RECEIPTS + CdtHelper.conductorBodyToString(body))
 			payment = response
 			generateResponse(payment)
 		end
