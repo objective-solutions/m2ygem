@@ -55,7 +55,7 @@ module CdtBaas
 		end
 
 		def createCard(body)
-			response = @request.postWithHeader(@url + ACCOUNT_PATH + body[:id].to_s + '/' + CARD_PATH + CdtHelper.conductorBodyToString(body), body, true)
+			response = @request.post(@url + ACCOUNT_PATH + body[:id].to_s + '/' + CARD_PATH + CdtHelper.conductorBodyToString(body), body, true)
 			person = CdtModel.new(response)
 			person
 		end
