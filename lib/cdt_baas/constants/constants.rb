@@ -91,5 +91,6 @@ module CdtBaas
   INDIVIDUALS = "individuals/"
   INDIVIDUALS_ACCOUNTS = "individuals/accounts/"
   RECEIPTS = "receipts/"
+  SCHEDULER = "scheduler/"
 
 end

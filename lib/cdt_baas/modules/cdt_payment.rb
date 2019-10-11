@@ -55,5 +55,44 @@ module CdtBaas
 			generateResponse(payment)
 		end
 
+		def getScheduler(body, version = 0)
+
+			if version != 0
+				url = @url.gsub("api", "payments") + 'v' + version.to_s + '/'
+			else
+				url = @url + SCHEDULER
+			end
+
+			response = @request.get(url + SCHEDULER + CdtHelper.conductorBodyToString(body))
+			payment = CdtModel.new(response)
+			generateResponse(payment)
+		end
+
+		def scheduler(body, version = 0)
+
+			if version != 0
+				url = @url.gsub("api", "payments") + 'v' + version.to_s + '/'
+			else
+				url = @url + SCHEDULER
+			end
+
+			response = @request.post(url + SCHEDULER, body, true)
+			payment = CdtModel.new(response)
+			generateResponse(payment)
+		end
+
+		def deleteScheduler(id, version = 0)
+
+			if version != 0
+				url = @url.gsub("api", "payments") + 'v' + version.to_s + '/'
+			else
+				url = @url + SCHEDULER
+			end
+
+			response = @request.delete(url + SCHEDULER + id.to_s)
+			payment = CdtModel.new(response)
+			generateResponse(payment)
+		end
+
 	end
 end

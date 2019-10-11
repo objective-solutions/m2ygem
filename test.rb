@@ -20,7 +20,7 @@ puts "testando enderecos"
 
 
 puts "testando Contas"
-#a = CdtBaas::CdtAccount.new("==", "prod")
+# a = CdtBaas::CdtAccount.new("MWNicmo4b3I2bjVjN2tidHRpZzQ0ZG5kcDA6cHJzb2tta281bDd2NzUxdGlyMzJzZDRkc212ODlwZjc1aXRtb2k0OHBxNmlrZGJuMmhs", "prod")
 #p a.getUserAccounts({:idPessoa => 3342})
 #p a.getAccounts('3342')
 #p a.getTimeline({:id => 30, :page => 0, :limit => 50})
@@ -51,8 +51,8 @@ puts "testando Serviço"
 #puts a.findp2pTransfer({:id => 56780})
 
 puts "testando Payment"
-a = CdtBaas::CdtPayment.new("", "prod")
-p a.getReceipts({:idAccount => 10788}, 1)
+# a = CdtBaas::CdtPayment.new("MWNicmo4b3I2bjVjN2tidHRpZzQ0ZG5kcDA6cHJzb2tta281bDd2NzUxdGlyMzJzZDRkc212ODlwZjc1aXRtb2k0OHBxNmlrZGJuMmhs", "prod")
+# p a.getReceipts({:idAccount => 11836}, 1)
 # res = a.paymentAdjustment("123")
 # p a.getPayment(26)
 
@@ -64,17 +64,16 @@ puts "testando Boleto"
 #a.getPDF(1)
 
 puts "testando Cartões"
-# a = CdtBaas::CdtCard.new("", "prod")
+# a = CdtBaas::CdtCard.new("NHBxZDNjOGozZ3FzaWtjZWE4bHRsYmRjY2I6MXZkZ20xNmk0Njk1b3J2aGJrb3VvbTFrOGpyMmpsZ2R2dXFnZHBpcm8waG9jN2Vic2pjMw==", "hml")
 #p a.getLotes({:identificadorExterno => 12})
 #p a.findCardData(30)
 #a.getCardLimit(30)
 #a.createDebitCard(0, {})
-#a.cancelCard(-1, {})
+# a.cancelCard(7476, {:id_status => 3})
 #p a.addHolder(1, {:id_pessoa => 14})
-#a.updatePassword(-1, {:password => "1230"})
-# p a.getCards({:idConta => 7098})
+# p a.updatePassword(4, {:password => "1230"})
+# p a.getCards({})
 # p a.findAccountCards({:idConta => 7098})
-#a.passwordValidation(26, {:password => "2809"})
 
 puts "testando Clientes"
 #a = CdtBaas::CdtClient.new("s", "hml")
@@ -158,6 +157,28 @@ puts "testando individuals"
 # p a.getPersons({})
 # p 'a.updatePerson({})'
 # p a.updatePerson(0, {})
+
+puts "testando schedule"
+# a = CdtBaas::CdtPayment.new("", "hml")
+# p a.getScheduler({}, 1)
+# p a.scheduler(
+# {
+# "dateSchedule": "2019-10-12",
+# "payload": {
+#    "idAccount": 15,
+#    "description": "Agendamento Teste",
+#    "barCodeNumber": "413497030060000269528626839426022179751000002212",
+#    "dueDate": "2019-10-14T11:40:11.000",
+#    "assignor": "Test Assignor",
+#    "assignorDocument": "Dock",
+#    "discount": 0,
+#    "interest": 0,
+#    "fine": 0,
+#    "amount": 1.50
+# }
+# }, 1)
+# p a.getScheduler({}, 1)
+# p a.deleteScheduler("16a5a890-d7fc-4230-a9f3-4bc04c00d38c", 1)
 
 
 
